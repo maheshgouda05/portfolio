@@ -2,527 +2,1549 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Personal developer portfolio of Mahesh Basarkod — Computer Science student, Full Stack Developer, and passionate builder of modern digital experiences.">
+  <meta name="author" content="Mahesh Basarkod">
+  <meta name="keywords" content="Mahesh Basarkod, Developer Portfolio, Full Stack Developer, Software Engineer, Web Development">
 
-    <meta name="description"
-        content="Personal portfolio of Mahesh, showcasing projects, skills, education, and contact information.">
+  <title>Mahesh Basarkod | Developer Portfolio</title>
 
-    <title>Mahesh | Developer Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts Preconnect & Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- ================= HEADER / NAVIGATION ================= -->
+  <!-- Background Ambient Glowing Orbs -->
+  <div class="bg-ambient-glow" aria-hidden="true">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+  </div>
 
-    <header>
-        <nav aria-label="Main navigation">
+  <!-- Background Grid Texture -->
+  <div class="bg-grid-overlay" aria-hidden="true"></div>
 
-            <a href="#home" class="logo">
-                Mahesh<span>.</span>
+  <!-- Interactive Particles Canvas -->
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+  <!-- Custom Cursor (Desktop Only) -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ==========================================================================
+       [EDITABLE SECTION: HEADER / NAVIGATION BAR]
+       Update your initials, full name, avatar, and navigation links below.
+  ========================================================================== -->
+  <header class="site-header" id="site-header">
+    <nav class="nav-container" aria-label="Main Navigation">
+
+      <!-- Brand Identity -->
+      <a href="#home" class="brand-wrapper" aria-label="Home page">
+        <div class="brand-avatar">
+          <!-- Put your profile photograph as profile.jpg in this folder, or update src -->
+          <img src="profile.jpg" alt="Mahesh Basarkod"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="avatar-fallback" style="display: none;">MB</div>
+          <span class="online-pulse-dot" title="Available for opportunities"></span>
+        </div>
+        <div class="brand-text">
+          <div class="brand-name-row">
+            <span class="brand-name">Mahesh Basarkod</span>
+            <!-- [EDITABLE]: Replace [YOUR CGPA] with your CGPA or status -->
+            <span class="badge-cgpa">[YOUR CGPA]</span>
+          </div>
+          <span class="brand-subtitle">Computer Science & Full Stack</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu Pills -->
+      <ul class="nav-menu" role="menubar">
+        <li role="none"><a href="#about" class="nav-link" role="menuitem"><span class="nav-icon">🎓</span>About & Edu</a></li>
+        <li role="none"><a href="#experience" class="nav-link" role="menuitem"><span class="nav-icon">💼</span>Experience</a></li>
+        <li role="none"><a href="#projects" class="nav-link" role="menuitem"><span class="nav-icon">&lt;/&gt;</span>Projects</a></li>
+        <li role="none"><a href="#skills" class="nav-link" role="menuitem"><span class="nav-icon">🥞</span>Skills</a></li>
+        <li role="none"><a href="#achievements" class="nav-link" role="menuitem"><span class="nav-icon">🏅</span>Achievements</a></li>
+        <li role="none"><a href="#contact" class="nav-link" role="menuitem"><span class="nav-icon">✉️</span>Contact</a></li>
+      </ul>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <!-- [EDITABLE]: Put your resume.pdf file in this folder -->
+        <a href="resume.pdf" class="btn-resume" download title="Download Resume">
+          <span>📄</span>
+          <span>View Resume</span>
+        </a>
+        <a href="#contact" class="btn-hire">
+          <span>✈️</span>
+          <span>Hire / Contact</span>
+        </a>
+        <!-- Mobile Hamburger Toggle -->
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-line line-1"></span>
+          <span class="hamburger-line line-2"></span>
+          <span class="hamburger-line line-3"></span>
+        </button>
+      </div>
+
+    </nav>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <ul class="mobile-nav-links">
+      <li><a href="#about" class="mobile-nav-link"><span>🎓</span>About & Edu</a></li>
+      <li><a href="#experience" class="mobile-nav-link"><span>💼</span>Experience</a></li>
+      <li><a href="#projects" class="mobile-nav-link"><span>&lt;/&gt;</span>Projects</a></li>
+      <li><a href="#skills" class="mobile-nav-link"><span>🥞</span>Skills</a></li>
+      <li><a href="#achievements" class="mobile-nav-link"><span>🏅</span>Achievements</a></li>
+      <li><a href="#contact" class="mobile-nav-link"><span>✉️</span>Contact</a></li>
+    </ul>
+    <div class="mobile-nav-actions">
+      <a href="resume.pdf" class="btn-resume" download><span>📄</span> View Resume</a>
+      <a href="#contact" class="btn-hire"><span>✈️</span> Hire / Contact</a>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+       MAIN CONTENT CONTAINER
+  ========================================================================== -->
+  <main id="main-content">
+
+    <!-- ==========================================================================
+         [EDITABLE SECTION: HERO / CANDIDATE INTRODUCTION]
+    ========================================================================== -->
+    <section id="home" class="hero-section">
+      <div class="hero-grid">
+
+        <!-- Left Column: Introduction & Primary Call to Action -->
+        <div class="hero-content reveal-on-scroll">
+
+          <!-- Badges Row -->
+          <div class="hero-badge-row">
+            <div class="hero-status-pill">
+              <span class="status-dot-pulse"></span>
+              <span>Available for Roles & Internships</span>
+            </div>
+            <!-- [EDITABLE]: Replace [YOUR CGPA] with your actual grade -->
+            <div class="hero-sub-pill">
+              <span>✨</span>
+              <span>[YOUR CGPA] • CSE</span>
+            </div>
+          </div>
+
+          <!-- Main Hero Heading -->
+          <h1 class="hero-heading">
+            Hi, I'm <span class="gradient-text">Mahesh Basarkod</span>
+          </h1>
+
+          <!-- Rotating / Typewriter Professional Roles -->
+          <div class="hero-role-wrapper">
+            <span class="typed-role-text" id="typed-role-text">Full Stack Developer</span>
+            <span class="role-cursor-blink">|</span>
+          </div>
+
+          <!-- Professional Tagline & Overview -->
+          <p class="hero-tagline">
+            Computer Science student specializing in <strong>Full Stack Web Development</strong>, <strong>API Systems</strong>, and <strong>Interactive UI Engineering</strong>.
+          </p>
+
+          <p class="hero-description">
+            Passionate software enthusiast dedicated to transforming ideas into scalable, efficient digital products. Skilled in modern web technologies, database integrations, and clean code architecture with a strong drive for continuous learning and problem solving.
+          </p>
+
+          <!-- Call to Action Buttons -->
+          <div class="hero-buttons-row">
+            <a href="#projects" class="btn-primary-glow">
+              <span>View Experience & Work</span>
+              <span>→</span>
             </a>
-
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-
-            <a href="#contact" class="nav-button">Let's Connect</a>
-
-        </nav>
-    </header>
-
-
-    <!-- ================= MAIN CONTENT ================= -->
-
-    <main>
-
-        <!-- ================= HOME / HERO SECTION ================= -->
-
-        <section id="home">
-
-            <div class="hero-content">
-
-                <p class="hero-label">WELCOME TO MY PORTFOLIO</p>
-
-                <h1>
-                    Hi, I'm Mahesh.
-                    <br>
-                    <span>A Developer in Progress.</span>
-                </h1>
-
-                <p>
-                    I am passionate about technology, web development,
-                    and building creative solutions to real-world problems.
-                    I enjoy learning new technologies and turning ideas
-                    into useful digital products.
-                </p>
-
-                <div class="hero-buttons">
-                    <a href="#projects">Explore My Projects</a>
-                    <a href="#contact">Contact Me</a>
-                </div>
-
-                <div class="social-links">
-                    <a href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener noreferrer">
-                        GitHub
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/YOUR-USERNAME/" target="_blank" rel="noopener noreferrer">
-                        LinkedIn
-                    </a>
-                </div>
-
-            </div>
-
-            <div class="hero-image">
-
-                <!-- Replace this with your own photograph -->
-                <img src="https://placehold.co/400x450" alt="Placeholder for Mahesh's profile photograph">
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= ABOUT SECTION ================= -->
-
-        <section id="about">
-
-            <div class="section-heading">
-                <p>GET TO KNOW ME</p>
-                <h2>About Me</h2>
-            </div>
-
-            <div class="about-content">
-
-                <div class="about-image">
-                    <img src="https://placehold.co/350x400" alt="Placeholder for an about-me photograph">
-                </div>
-
-                <div class="about-text">
-
-                    <h3>Aspiring Developer and Technology Enthusiast</h3>
-
-                    <p>
-                        I am a student interested in software development,
-                        web technologies, and innovative project building.
-                        I enjoy exploring new ideas and learning how
-                        technology can solve everyday problems.
-                    </p>
-
-                    <p>
-                        I am currently developing my programming skills
-                        and working on projects that help me gain
-                        practical experience in frontend and backend
-                        development.
-                    </p>
-
-                    <p>
-                        My goal is to become a skilled developer,
-                        contribute to meaningful projects, and
-                        continuously improve my technical knowledge.
-                    </p>
-
-                    <a href="#contact">Get In Touch</a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= SKILLS SECTION ================= -->
-
-        <section id="skills">
-
-            <div class="section-heading">
-                <p>WHAT I WORK WITH</p>
-                <h2>My Skills</h2>
-            </div>
-
-            <p>
-                Here are some of the technologies and tools I am
-                learning and using in my projects.
-            </p>
-
-            <div class="skills-container">
-
-                <article class="skill-card">
-                    <h3>Frontend Development</h3>
-                    <ul>
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                        <li>JavaScript</li>
-                        <li>React.js</li>
-                        <li>Next.js</li>
-                    </ul>
-                </article>
-
-                <article class="skill-card">
-                    <h3>Backend Development</h3>
-                    <ul>
-                        <li>Node.js</li>
-                        <li>REST APIs</li>
-                        <li>Backend fundamentals</li>
-                    </ul>
-                </article>
-
-                <article class="skill-card">
-                    <h3>Database Technologies</h3>
-                    <ul>
-                        <li>Firebase</li>
-                        <li>Database fundamentals</li>
-                    </ul>
-                </article>
-
-                <article class="skill-card">
-                    <h3>Tools and Platforms</h3>
-                    <ul>
-                        <li>Git</li>
-                        <li>GitHub</li>
-                        <li>VS Code</li>
-                        <li>AI development tools</li>
-                    </ul>
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= PROJECTS SECTION ================= -->
-
-        <section id="projects">
-
-            <div class="section-heading">
-                <p>MY RECENT WORK</p>
-                <h2>Featured Projects</h2>
-            </div>
-
-            <p>
-                A selection of projects I have worked on or am
-                currently developing.
-            </p>
-
-            <div class="projects-container">
-
-                <!-- PROJECT 1 -->
-
-                <article class="project-card">
-
-                    <img src="https://placehold.co/600x350" alt="Placeholder image for Collection wardrobe application">
-
-                    <div class="project-content">
-
-                        <p class="project-category">
-                            WEB APPLICATION
-                        </p>
-
-                        <h3>Collection — Smart Wardrobe</h3>
-
-                        <p>
-                            A wardrobe management application that helps
-                            users organise clothing items, manage their
-                            collection, and discover outfit combinations.
-                        </p>
-
-                        <ul class="project-tech">
-                            <li>React</li>
-                            <li>Next.js</li>
-                            <li>Backend APIs</li>
-                        </ul>
-
-                        <a href="https://github.com/YOUR-USERNAME/collection" target="_blank" rel="noopener noreferrer">
-                            View Project
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PROJECT 2 -->
-
-                <article class="project-card">
-
-                    <img src="https://placehold.co/600x350" alt="Placeholder image for Analytix Club website">
-
-                    <div class="project-content">
-
-                        <p class="project-category">
-                            CLUB WEBSITE
-                        </p>
-
-                        <h3>Analytix Club</h3>
-
-                        <p>
-                            A website project designed to present a
-                            technology club, share information, and
-                            showcase its activities and events.
-                        </p>
-
-                        <ul class="project-tech">
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                            <li>Firebase</li>
-                        </ul>
-
-                        <a href="#contact">
-                            Project Details
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PROJECT 3 -->
-
-                <article class="project-card">
-
-                    <img src="https://placehold.co/600x350"
-                        alt="Placeholder image for Zewa food waste reduction project">
-
-                    <div class="project-content">
-
-                        <p class="project-category">
-                            SOCIAL IMPACT PROJECT
-                        </p>
-
-                        <h3>Zewa — Zero Waste</h3>
-
-                        <p>
-                            A concept for reducing food waste by helping
-                            restaurants offer surplus food at discounted
-                            prices instead of throwing it away.
-                        </p>
-
-                        <ul class="project-tech">
-                            <li>Web Development</li>
-                            <li>UI/UX</li>
-                            <li>Problem Solving</li>
-                        </ul>
-
-                        <a href="#contact">
-                            Project Details
-                        </a>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= EDUCATION SECTION ================= -->
-
-        <section id="education">
-
-            <div class="section-heading">
-                <p>MY LEARNING JOURNEY</p>
-                <h2>Education</h2>
-            </div>
-
-            <div class="education-container">
-
-                <article class="education-card">
-
-                    <h3>Undergraduate Education</h3>
-
-                    <p>
-                        <strong>Degree:</strong>
-                        Add your degree or course
-                    </p>
-
-                    <p>
-                        <strong>Institution:</strong>
-                        Add your college name
-                    </p>
-
-                    <p>
-                        <strong>Duration:</strong>
-                        Add your study years
-                    </p>
-
-                </article>
-
-                <article class="education-card">
-
-                    <h3>Certifications and Courses</h3>
-
-                    <p>
-                        Add your technical courses, certifications,
-                        workshops, and relevant learning achievements.
-                    </p>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= ACHIEVEMENTS SECTION ================= -->
-
-        <section id="achievements">
-
-            <div class="section-heading">
-                <p>MY MILESTONES</p>
-                <h2>Achievements</h2>
-            </div>
-
-            <div class="achievements-container">
-
-                <article class="achievement-card">
-                    <h3>Projects Completed</h3>
-                    <p>
-                        Add the projects you have successfully completed.
-                    </p>
-                </article>
-
-                <article class="achievement-card">
-                    <h3>Certifications</h3>
-                    <p>
-                        Add your certificates and technical achievements.
-                    </p>
-                </article>
-
-                <article class="achievement-card">
-                    <h3>Activities and Events</h3>
-                    <p>
-                        Add hackathons, workshops, club activities,
-                        and other relevant experiences.
-                    </p>
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= CONTACT SECTION ================= -->
-
-        <section id="contact">
-
-            <div class="section-heading">
-                <p>LET'S WORK TOGETHER</p>
-                <h2>Contact Me</h2>
-            </div>
-
-            <p>
-                Have a project idea, collaboration opportunity,
-                or just want to connect? Feel free to reach out.
-            </p>
-
-            <div class="contact-container">
-
-                <div class="contact-information">
-
-                    <h3>Get In Touch</h3>
-
-                    <p>
-                        <strong>Email:</strong>
-                        <a href="mailto:YOUR-EMAIL@example.com">
-                            YOUR-EMAIL@example.com
-                        </a>
-                    </p>
-
-                    <p>
-                        <strong>GitHub:</strong>
-                        <a href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener noreferrer">
-                            Visit my GitHub
-                        </a>
-                    </p>
-
-                    <p>
-                        <strong>LinkedIn:</strong>
-                        <a href="https://www.linkedin.com/in/YOUR-USERNAME/" target="_blank" rel="noopener noreferrer">
-                            Connect on LinkedIn
-                        </a>
-                    </p>
-
-                </div>
-
-
-                <!-- Frontend form only; it needs JavaScript and
-                     a backend or form service to send messages. -->
-
-                <form id="contact-form" action="#" method="post">
-
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Your Email</label>
-                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" placeholder="Enter the subject" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" name="message" rows="6" placeholder="Write your message here"
-                            required></textarea>
-                    </div>
-
-                    <button type="submit">
-                        Send Message
-                    </button>
-
-                </form>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer>
-
-        <div class="footer-content">
-
-            <a href="#home" class="logo">
-                Mahesh<span>.</span>
+            <a href="resume.pdf" class="btn-glass-secondary" download>
+              <span>📄</span>
+              <span>Resume & Qualifications</span>
             </a>
+            <a href="#contact" class="btn-glass-secondary">
+              <span>✈️</span>
+              <span>Direct Contact</span>
+            </a>
+          </div>
 
-            <p>
-                Building ideas into reality, one project at a time.
-            </p>
-
-            <div class="footer-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </div>
-
-            <p>
-                &copy; <span id="current-year">2026</span>
-                Mahesh. All rights reserved.
-            </p>
+          <!-- Social Handles Row -->
+          <div class="hero-handles-row">
+            <!-- [EDITABLE]: Replace with your GitHub URL -->
+            <a href="https://github.com/maheshgouda05" target="_blank" rel="noopener noreferrer" class="handle-pill">
+              <span class="handle-icon">🐙</span>
+              <span>github.com/maheshgouda05</span>
+            </a>
+            <!-- [EDITABLE]: Replace with your LinkedIn URL -->
+            <a href="https://www.linkedin.com/in/[YOUR-USERNAME]/" target="_blank" rel="noopener noreferrer" class="handle-pill">
+              <span class="handle-icon">💼</span>
+              <span>LinkedIn</span>
+            </a>
+            <!-- [EDITABLE]: Replace with your Email -->
+            <a href="mailto:maheshbasarakod05@gmail.com" class="handle-pill">
+              <span class="handle-icon">✉️</span>
+              <span>maheshbasarakod05@gmail.com</span>
+            </a>
+            <!-- [EDITABLE]: Replace with your Phone number or location -->
+            <a href="tel:[YOUR-PHONE-NUMBER]" class="handle-pill">
+              <span class="handle-icon">📞</span>
+              <span>[YOUR PHONE NUMBER]</span>
+            </a>
+          </div>
 
         </div>
 
-    </footer>
-    <script src="script.js"></script>
+        <!-- Right Column: Interactive Candidate Profile Dashboard Card -->
+        <div class="candidate-card-wrapper reveal-on-scroll stagger-1">
+          <div class="candidate-dashboard-card">
+
+            <!-- Card Header -->
+            <div class="candidate-card-header">
+              <div class="candidate-label-group">
+                <span class="candidate-status-dot"></span>
+                <span class="candidate-card-title">CANDIDATE PROFILE</span>
+              </div>
+              <!-- [EDITABLE]: Study duration -->
+              <span class="candidate-tag-year">B.Tech CSE [2022–2026]</span>
+            </div>
+
+            <!-- Profile Overview Row -->
+            <div class="candidate-profile-row">
+              <div class="profile-avatar-container">
+                <img src="profile.jpg" alt="Mahesh Basarkod"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="profile-avatar-fallback" style="display: none;">MB</div>
+                <span class="profile-check-badge">✓</span>
+              </div>
+              <div class="candidate-profile-info">
+                <div class="candidate-name-badge-row">
+                  <h3 class="candidate-name">Mahesh Basarkod</h3>
+                  <span class="badge-cgpa">[YOUR CGPA]</span>
+                </div>
+                <!-- [EDITABLE]: College/University details -->
+                <p class="candidate-affiliation">[YOUR COLLEGE / UNIVERSITY] • CSE</p>
+                <p class="candidate-location">
+                  <span>📍</span>
+                  <span>Bangalore, Karnataka</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- 2x2 Metric Stat Tiles -->
+            <div class="candidate-stats-grid">
+              <div class="metric-stat-tile">
+                <span class="stat-label">CGPA / Score</span>
+                <!-- [EDITABLE]: Your CGPA or marks -->
+                <span class="stat-value cyan-text">[YOUR CGPA]</span>
+                <span class="stat-subtext">[YOUR UNIVERSITY]</span>
+              </div>
+              <div class="metric-stat-tile">
+                <span class="stat-label">Projects Built</span>
+                <span class="stat-value purple-text">3+ Featured</span>
+                <span class="stat-subtext">Web & Software</span>
+              </div>
+              <div class="metric-stat-tile">
+                <span class="stat-label">Core Focus</span>
+                <span class="stat-value emerald-text">Full Stack</span>
+                <span class="stat-subtext">Frontend & Backend APIs</span>
+              </div>
+              <div class="metric-stat-tile">
+                <span class="stat-label">Certifications</span>
+                <!-- [EDITABLE]: Number of verified certifications -->
+                <span class="stat-value">[YOUR CERTS]</span>
+                <span class="stat-subtext">Technical Credentials</span>
+              </div>
+            </div>
+
+            <!-- Technical Focus Areas Chips -->
+            <div class="candidate-focus-section">
+              <span class="focus-heading">TECHNICAL FOCUS AREAS</span>
+              <div class="focus-chips-wrap">
+                <span class="focus-chip"><span class="focus-check">✓</span> Full Stack Web Dev</span>
+                <span class="focus-chip"><span class="focus-check">✓</span> JavaScript & React</span>
+                <span class="focus-chip"><span class="focus-check">✓</span> HTML5 & CSS3</span>
+                <span class="focus-chip"><span class="focus-check">✓</span> Node.js & REST APIs</span>
+                <span class="focus-chip"><span class="focus-check">✓</span> Python & Programming</span>
+                <span class="focus-chip"><span class="focus-check">✓</span> Git & GitHub</span>
+                <span class="focus-chip"><span class="focus-check">✓</span> Database & Firebase</span>
+                <span class="focus-chip"><span class="focus-check">✓</span> Problem Solving</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         HIGHLIGHTS TICKER / RUNNING MARQUEE
+    ========================================================================== -->
+    <div class="highlights-ticker-wrapper reveal-on-scroll">
+      <div class="ticker-inner-bar">
+        <span class="ticker-tag-pill">HIGHLIGHTS</span>
+        <div class="ticker-scroll-track">
+          <div class="ticker-content">
+            <!-- [EDITABLE]: Replace text in ticker with your highlights -->
+            <span>COMPUTER SCIENCE ENGINEERING @ [YOUR COLLEGE]</span>
+            <span class="ticker-dot">•</span>
+            <span>📜 [YOUR CGPA] ACADEMIC EXCELLENCE</span>
+            <span class="ticker-dot">•</span>
+            <span>💻 FULL STACK DEVELOPER WITH REACT & NODE.JS</span>
+            <span class="ticker-dot">•</span>
+            <span>🚀 ACTIVE PROJECT BUILDER: COLLECTION & ANALYTIX</span>
+            <span class="ticker-dot">•</span>
+            <span>💡 PASSIONATE ABOUT SCALABLE SYSTEMS & MODERN WEB UX</span>
+            <span class="ticker-dot">•</span>
+            <!-- Duplicate for seamless infinite loop -->
+            <span>COMPUTER SCIENCE ENGINEERING @ [YOUR COLLEGE]</span>
+            <span class="ticker-dot">•</span>
+            <span>📜 [YOUR CGPA] ACADEMIC EXCELLENCE</span>
+            <span class="ticker-dot">•</span>
+            <span>💻 FULL STACK DEVELOPER WITH REACT & NODE.JS</span>
+            <span class="ticker-dot">•</span>
+            <span>🚀 ACTIVE PROJECT BUILDER: COLLECTION & ANALYTIX</span>
+            <span class="ticker-dot">•</span>
+            <span>💡 PASSIONATE ABOUT SCALABLE SYSTEMS & MODERN WEB UX</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ==========================================================================
+         [EDITABLE SECTION: ABOUT ME & ACADEMIC CREDENTIALS]
+    ========================================================================== -->
+    <section id="about">
+
+      <div class="section-badge-wrapper reveal-on-scroll">
+        <span class="section-badge">🎓 ACADEMIC FOUNDATION &amp; PROFILE</span>
+      </div>
+
+      <h2 class="section-title reveal-on-scroll">About Me &amp; Profile Overview</h2>
+      <p class="section-subtitle reveal-on-scroll">
+        A motivated Computer Science Engineering student dedicated to mastering software development, modern frontend experiences, and backend architectures.
+      </p>
+
+      <!-- 4 Quick Highlight Cards -->
+      <div class="about-stats-quad reveal-on-scroll">
+        <div class="about-stat-card">
+          <span class="about-card-sparkle">✨</span>
+          <h3 class="about-stat-header cyan-text">[YOUR CGPA]</h3>
+          <p class="about-stat-text">Strong academic standing in Computer Science Engineering at [YOUR COLLEGE].</p>
+        </div>
+        <div class="about-stat-card">
+          <span class="about-card-sparkle">🚀</span>
+          <h3 class="about-stat-header purple-text">Full Stack Dev</h3>
+          <p class="about-stat-text">Hands-on experience building interactive web applications with modern frameworks.</p>
+        </div>
+        <div class="about-stat-card">
+          <span class="about-card-sparkle">🧠</span>
+          <h3 class="about-stat-header emerald-text">Core CS &amp; Logic</h3>
+          <p class="about-stat-text">Proficient in programming fundamentals, data structures, algorithms, and database systems.</p>
+        </div>
+        <div class="about-stat-card">
+          <span class="about-card-sparkle">🤝</span>
+          <h3 class="about-stat-header">Team &amp; Growth</h3>
+          <p class="about-stat-text">Collaborative approach with strong communication, problem-solving, and continuous learning mindset.</p>
+        </div>
+      </div>
+
+      <!-- Split Layout: Interactive Tabs on Left, Education Credentials on Right -->
+      <div class="about-split-layout">
+
+        <!-- Left Column: Interactive Tab Card -->
+        <div class="about-details-card reveal-on-scroll">
+
+          <!-- Tab Navigation Buttons -->
+          <div class="about-tabs-nav" role="tablist">
+            <button class="about-tab-btn active" data-tab="summary" role="tab" aria-selected="true">Summary</button>
+            <button class="about-tab-btn" data-tab="philosophy" role="tab" aria-selected="false">Philosophy</button>
+            <button class="about-tab-btn" data-tab="leadership" role="tab" aria-selected="false">Leadership</button>
+            <button class="about-tab-btn" data-tab="interests" role="tab" aria-selected="false">Interests</button>
+          </div>
+
+          <!-- Tab Contents -->
+          <div class="tab-pane active" id="tab-summary" role="tabpanel">
+            <p>
+              I am an aspiring software engineer and Computer Science Engineering student with a deep passion for web technologies, application development, and practical problem solving.
+            </p>
+            <p>
+              My journey involves building real-world projects such as full-stack applications, interactive club portals, and utility platforms. I enjoy crafting intuitive user interfaces while ensuring reliable, scalable backend logic.
+            </p>
+            <p>
+              I continuously seek opportunities to collaborate on meaningful software initiatives, contribute to impactful open-source tools, and expand my technical expertise across full-stack engineering and cloud-native workflows.
+            </p>
+          </div>
+
+          <div class="tab-pane" id="tab-philosophy" role="tabpanel">
+            <p>
+              I believe great software is born at the intersection of clean architecture, human-centered design, and relentless attention to detail.
+            </p>
+            <p>
+              Every line of code should have a purpose, every user experience should feel seamless, and every system should be built to withstand scale and real-world edge cases.
+            </p>
+          </div>
+
+          <div class="tab-pane" id="tab-leadership" role="tabpanel">
+            <p>
+              Actively involved in technical clubs, academic forums, and collaborative team sprints. Experienced in coordinating discussions, structuring project roadmaps, and mentoring peers in web development fundamentals.
+            </p>
+            <p>
+              I bring energy, accountability, and clear communication to every team I participate in.
+            </p>
+          </div>
+
+          <div class="tab-pane" id="tab-interests" role="tabpanel">
+            <p>
+              Currently exploring modern distributed systems, cloud computing, AI-assisted development workflows, and high-performance frontend animations.
+            </p>
+            <p>
+              When away from the keyboard, I enjoy exploring technological breakthroughs, reading engineering tech blogs, and building creative side-projects.
+            </p>
+          </div>
+
+          <!-- Core Competencies Checklist -->
+          <div class="competencies-box">
+            <span class="competencies-title">
+              <span>✓</span>
+              <span>CORE TECHNICAL COMPETENCIES</span>
+            </span>
+            <div class="competencies-grid">
+              <div class="competency-item">
+                <span class="comp-dot cyan"></span>
+                <span>Data Structures &amp; Algorithms</span>
+              </div>
+              <div class="competency-item">
+                <span class="comp-dot purple"></span>
+                <span>Full Stack Web Development</span>
+              </div>
+              <div class="competency-item">
+                <span class="comp-dot emerald"></span>
+                <span>Object-Oriented Programming</span>
+              </div>
+              <div class="competency-item">
+                <span class="comp-dot amber"></span>
+                <span>RESTful APIs &amp; Backend Logic</span>
+              </div>
+              <div class="competency-item">
+                <span class="comp-dot cyan"></span>
+                <span>Relational Databases &amp; SQL</span>
+              </div>
+              <div class="competency-item">
+                <span class="comp-dot purple"></span>
+                <span>Version Control &amp; Git Workflows</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Education Credentials Timeline -->
+        <div class="education-panel-card reveal-on-scroll stagger-1" id="education">
+
+          <div class="panel-header-row">
+            <h3 class="panel-title">
+              <span>📖</span>
+              <span>Education Credentials</span>
+            </h3>
+            <!-- [EDITABLE]: Overall education years -->
+            <span class="panel-period-pill">[2020 — 2026]</span>
+          </div>
+
+          <div class="education-timeline-items">
+
+            <!-- 1. Undergraduate Degree -->
+            <div class="edu-timeline-node">
+              <div class="edu-node-bullet">
+                <span class="edu-bullet-center"></span>
+              </div>
+              <div class="edu-card-content">
+                <div class="edu-header-row">
+                  <div class="edu-title-col">
+                    <!-- [EDITABLE]: Your Degree and College -->
+                    <h4 class="edu-degree-name">[YOUR DEGREE NAME e.g. B.Tech in CSE]</h4>
+                    <span class="edu-institution-name">[YOUR COLLEGE / UNIVERSITY NAME]</span>
+                    <span class="edu-date-range">[STUDY YEARS e.g. 2022 — 2026]</span>
+                  </div>
+                  <!-- [EDITABLE]: Your CGPA / Grade -->
+                  <span class="edu-score-badge">CGPA: [YOUR CGPA]</span>
+                </div>
+                <ul class="edu-bullet-points">
+                  <li>Specializing in Computer Science, software engineering methodologies, and algorithms.</li>
+                  <li>Actively building full-stack applications, collaborating on technical projects, and participating in workshops.</li>
+                  <li>Consistent academic performance with focus on theoretical foundations and practical implementations.</li>
+                </ul>
+                <div class="edu-coursework-tags">
+                  <span class="coursework-label">KEY COURSEWORK:</span>
+                  <span class="course-tag">Data Structures</span>
+                  <span class="course-tag">Algorithms</span>
+                  <span class="course-tag">Web Development</span>
+                  <span class="course-tag">DBMS</span>
+                  <span class="course-tag">Operating Systems</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Pre-University / 12th Grade -->
+            <div class="edu-timeline-node">
+              <div class="edu-node-bullet purple">
+                <span class="edu-bullet-center"></span>
+              </div>
+              <div class="edu-card-content">
+                <div class="edu-header-row">
+                  <div class="edu-title-col">
+                    <!-- [EDITABLE]: 12th details -->
+                    <h4 class="edu-degree-name">12th Grade (Pre-University / Intermediate)</h4>
+                    <span class="edu-institution-name">[YOUR PU COLLEGE / HIGHER SECONDARY SCHOOL]</span>
+                    <span class="edu-date-range">[YEARS e.g. 2020 — 2022]</span>
+                  </div>
+                  <!-- [EDITABLE]: 12th Percentage / Marks -->
+                  <span class="edu-score-badge">[YOUR 12TH %]</span>
+                </div>
+                <ul class="edu-bullet-points">
+                  <li>Completed Senior Secondary education in Science Stream (Physics, Chemistry, Mathematics, Computer Science).</li>
+                  <li>Secured distinction with solid analytical reasoning and mathematical proficiency.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- 3. Secondary / 10th Grade -->
+            <div class="edu-timeline-node">
+              <div class="edu-node-bullet">
+                <span class="edu-bullet-center"></span>
+              </div>
+              <div class="edu-card-content">
+                <div class="edu-header-row">
+                  <div class="edu-title-col">
+                    <!-- [EDITABLE]: 10th details -->
+                    <h4 class="edu-degree-name">10th Grade (Secondary School Leaving Certificate)</h4>
+                    <span class="edu-institution-name">[YOUR HIGH SCHOOL NAME / BOARD]</span>
+                    <span class="edu-date-range">[YEAR e.g. 2020]</span>
+                  </div>
+                  <!-- [EDITABLE]: 10th Percentage / Marks -->
+                  <span class="edu-score-badge">[YOUR 10TH %]</span>
+                </div>
+                <ul class="edu-bullet-points">
+                  <li>Graduated secondary education with high distinction across mathematics, science, and languages.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================================================
+         [EDITABLE SECTION: PROFESSIONAL & PROJECT EXPERIENCE]
+    ========================================================================== -->
+    <section id="experience">
+
+      <div class="section-badge-wrapper reveal-on-scroll">
+        <span class="section-badge">💼 CAREER &amp; PRACTICAL JOURNEY</span>
+      </div>
+
+      <h2 class="section-title reveal-on-scroll">Professional &amp; Relevant Experience</h2>
+      <p class="section-subtitle reveal-on-scroll">
+        Hands-on technical initiatives, project engineering roles, and collaborative software development.
+      </p>
+
+      <!-- Category Filter Pills -->
+      <div class="filter-controls-row reveal-on-scroll">
+        <button class="filter-btn active" data-filter="all">All Experiences</button>
+        <button class="filter-btn" data-filter="current">Current Roles</button>
+        <button class="filter-btn" data-filter="completed">Completed Projects &amp; Roles</button>
+      </div>
+
+      <!-- Experience Cards Timeline -->
+      <div class="experience-timeline">
+
+        <!-- Role 1: Project Lead / Full Stack Developer -->
+        <article class="experience-card reveal-on-scroll" data-category="current">
+          <div class="exp-card-header">
+            <div class="exp-title-block">
+              <div class="exp-role-row">
+                <h3 class="exp-role-title">Full Stack Developer — Independent Projects</h3>
+                <span class="role-status-badge">Current Role</span>
+              </div>
+              <!-- [EDITABLE]: Company or Project organization -->
+              <span class="exp-company-name">Personal &amp; Academic Projects Portfolio</span>
+            </div>
+            <div class="exp-meta-block">
+              <span class="exp-date-range">2024 — Present</span>
+              <span class="exp-location-tag">📍 Bangalore, India</span>
+            </div>
+          </div>
+          <ul class="exp-responsibilities">
+            <li>Architected and developed modular web applications including wardrobe managers, community portals, and utility tools using HTML, CSS, JavaScript, and modern frameworks.</li>
+            <li>Designed responsive layouts with glassmorphic aesthetics, fluid typography, and accessible UI interactions.</li>
+            <li>Implemented client-side data handling, asynchronous API queries, and interactive components.</li>
+          </ul>
+          <div class="exp-tech-tags">
+            <span class="exp-tech-pill">JavaScript</span>
+            <span class="exp-tech-pill">React.js</span>
+            <span class="exp-tech-pill">HTML5 / CSS3</span>
+            <span class="exp-tech-pill">REST APIs</span>
+            <span class="exp-tech-pill">Git</span>
+          </div>
+        </article>
+
+        <!-- Role 2: Club Contributor / Web Team Member -->
+        <article class="experience-card reveal-on-scroll stagger-1" data-category="completed">
+          <div class="exp-card-header">
+            <div class="exp-title-block">
+              <div class="exp-role-row">
+                <!-- [EDITABLE]: Role title -->
+                <h3 class="exp-role-title">Technical Member &amp; Web Contributor</h3>
+                <span class="role-status-badge completed">Completed</span>
+              </div>
+              <span class="exp-company-name">Analytix Club / Student Tech Forum</span>
+            </div>
+            <div class="exp-meta-block">
+              <span class="exp-date-range">2023 — 2024</span>
+              <span class="exp-location-tag">📍 Campus Community</span>
+            </div>
+          </div>
+          <ul class="exp-responsibilities">
+            <li>Contributed to designing and developing the digital presence for the club, showcasing upcoming technology sessions and activities.</li>
+            <li>Collaborated with peers to organize coding sessions, workshops, and technical presentations.</li>
+            <li>Enhanced platform accessibility, mobile responsiveness, and clean code documentation.</li>
+          </ul>
+          <div class="exp-tech-tags">
+            <span class="exp-tech-pill">Web Design</span>
+            <span class="exp-tech-pill">HTML5</span>
+            <span class="exp-tech-pill">CSS3</span>
+            <span class="exp-tech-pill">JavaScript</span>
+            <span class="exp-tech-pill">Team Collaboration</span>
+          </div>
+        </article>
+
+        <!-- Role 3: Academic Project Collaborator -->
+        <article class="experience-card reveal-on-scroll stagger-2" data-category="completed">
+          <div class="exp-card-header">
+            <div class="exp-title-block">
+              <div class="exp-role-row">
+                <h3 class="exp-role-title">Software Project Collaborator</h3>
+                <span class="role-status-badge completed">Completed</span>
+              </div>
+              <span class="exp-company-name">Academic Engineering Showcase</span>
+            </div>
+            <div class="exp-meta-block">
+              <span class="exp-date-range">2023</span>
+              <span class="exp-location-tag">📍 Academic Labs</span>
+            </div>
+          </div>
+          <ul class="exp-responsibilities">
+            <li>Engineered proof-of-concept solutions for community problems, focusing on clean user journeys and reliable logic.</li>
+            <li>Conducted code reviews, debugged edge cases, and practiced standard Git branching workflows.</li>
+          </ul>
+          <div class="exp-tech-tags">
+            <span class="exp-tech-pill">Problem Solving</span>
+            <span class="exp-tech-pill">Database Basics</span>
+            <span class="exp-tech-pill">Frontend Logic</span>
+            <span class="exp-tech-pill">Documentation</span>
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================================================
+         [EDITABLE SECTION: FEATURED PROJECTS WITH SLIDER]
+    ========================================================================== -->
+    <section id="projects">
+
+      <div class="section-badge-wrapper reveal-on-scroll">
+        <span class="section-badge">&lt;/&gt; SELECTED PORTFOLIO WORK</span>
+      </div>
+
+      <h2 class="section-title reveal-on-scroll">Projects Portfolio</h2>
+      <p class="section-subtitle reveal-on-scroll">
+        Real-world applications spanning full-stack web platforms, community hubs, and impact-driven digital tools.
+      </p>
+
+      <!-- Category Filter Pills -->
+      <div class="filter-controls-row reveal-on-scroll">
+        <button class="filter-btn active" data-project-filter="all">All Projects</button>
+        <button class="filter-btn" data-project-filter="web">Web Applications</button>
+        <button class="filter-btn" data-project-filter="fullstack">Full Stack</button>
+        <button class="filter-btn" data-project-filter="impact">Social Impact</button>
+      </div>
+
+      <!-- Slider Component -->
+      <div class="projects-slider-container reveal-on-scroll">
+
+        <!-- Navigation Bar with Arrows -->
+        <div class="slider-navigation-bar">
+          <span class="slider-sub-text">← Swipe or use arrows to navigate projects →</span>
+          <div class="slider-arrows-wrap">
+            <button class="slider-arrow-btn" id="slider-arrow-prev" aria-label="Previous project">←</button>
+            <button class="slider-arrow-btn" id="slider-arrow-next" aria-label="Next project">→</button>
+          </div>
+        </div>
+
+        <!-- Viewport & Slider Track -->
+        <div class="projects-slider-viewport" id="projects-slider-viewport">
+          <div class="projects-slider-track" id="projects-slider-track">
+
+            <!-- PROJECT 1: Collection — Smart Wardrobe -->
+            <article class="project-card" data-pcat="web fullstack">
+              <div class="project-thumbnail-wrapper">
+                <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=700&q=80"
+                  alt="Collection — Smart Wardrobe"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="project-thumb-fallback" style="display: none;">
+                  <span class="fallback-icon">👗</span>
+                  <span>Collection App</span>
+                </div>
+                <div class="project-thumb-overlay">
+                  <a href="https://github.com/maheshgouda05/collection" target="_blank" rel="noopener noreferrer" class="overlay-link-btn">
+                    View Project 🌐
+                  </a>
+                </div>
+              </div>
+              <div class="project-card-body">
+                <div class="project-badge-meta-row">
+                  <span class="project-type-badge">Web Application</span>
+                  <span class="project-team-badge">Solo Project</span>
+                </div>
+                <h3 class="project-card-title">Collection — Smart Wardrobe</h3>
+                <p class="project-card-subheading">Digital wardrobe management &amp; outfit discovery platform</p>
+                <p class="project-card-desc">
+                  An intuitive web application that allows users to catalog clothing items, organize wardrobe collections, and explore smart outfit pairings. Built with modern component architecture and clean state management.
+                </p>
+                <div class="project-card-tags">
+                  <span class="project-tag">React</span>
+                  <span class="project-tag">Next.js</span>
+                  <span class="project-tag">JavaScript</span>
+                  <span class="project-tag">REST APIs</span>
+                </div>
+                <div class="project-card-footer">
+                  <a href="https://github.com/maheshgouda05/collection" target="_blank" rel="noopener noreferrer" class="project-action-link">
+                    <span>Explore Code</span>
+                    <span>→</span>
+                  </a>
+                  <a href="https://github.com/maheshgouda05/collection" target="_blank" rel="noopener noreferrer" class="project-github-btn" title="GitHub Repository">
+                    🐙
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 2: Analytix Club Platform -->
+            <article class="project-card" data-pcat="web">
+              <div class="project-thumbnail-wrapper">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=700&q=80"
+                  alt="Analytix Club Platform"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="project-thumb-fallback" style="display: none;">
+                  <span class="fallback-icon">📊</span>
+                  <span>Analytix Club</span>
+                </div>
+                <div class="project-thumb-overlay">
+                  <a href="#contact" class="overlay-link-btn">Project Details 🌐</a>
+                </div>
+              </div>
+              <div class="project-card-body">
+                <div class="project-badge-meta-row">
+                  <span class="project-type-badge">Club Platform</span>
+                  <span class="project-team-badge">Team Project</span>
+                </div>
+                <h3 class="project-card-title">Analytix Club Website</h3>
+                <p class="project-card-subheading">Interactive student technology portal &amp; event showcase</p>
+                <p class="project-card-desc">
+                  A modern responsive web portal created to showcase technology events, announcements, and coding workshops for a student technology community. Features smooth navigation and event schedules.
+                </p>
+                <div class="project-card-tags">
+                  <span class="project-tag">HTML5</span>
+                  <span class="project-tag">CSS3</span>
+                  <span class="project-tag">JavaScript</span>
+                  <span class="project-tag">Firebase</span>
+                </div>
+                <div class="project-card-footer">
+                  <a href="#contact" class="project-action-link">
+                    <span>Project Overview</span>
+                    <span>→</span>
+                  </a>
+                  <a href="https://github.com/maheshgouda05" target="_blank" rel="noopener noreferrer" class="project-github-btn" title="GitHub Profile">
+                    🐙
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 3: Zewa — Zero Waste -->
+            <article class="project-card" data-pcat="impact web">
+              <div class="project-thumbnail-wrapper">
+                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=700&q=80"
+                  alt="Zewa — Zero Waste"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="project-thumb-fallback" style="display: none;">
+                  <span class="fallback-icon">🌱</span>
+                  <span>Zewa Platform</span>
+                </div>
+                <div class="project-thumb-overlay">
+                  <a href="#contact" class="overlay-link-btn">Project Details 🌱</a>
+                </div>
+              </div>
+              <div class="project-card-body">
+                <div class="project-badge-meta-row">
+                  <span class="project-type-badge">Social Impact</span>
+                  <span class="project-team-badge">Concept &amp; Prototype</span>
+                </div>
+                <h3 class="project-card-title">Zewa — Zero Waste</h3>
+                <p class="project-card-subheading">Food waste reduction &amp; redistribution initiative</p>
+                <p class="project-card-desc">
+                  An environmental and social impact concept designed to connect food providers with consumers for surplus food redistribution, minimizing waste through digital scheduling and transparent tracking.
+                </p>
+                <div class="project-card-tags">
+                  <span class="project-tag">Web Design</span>
+                  <span class="project-tag">UI/UX</span>
+                  <span class="project-tag">JavaScript</span>
+                  <span class="project-tag">Sustainability</span>
+                </div>
+                <div class="project-card-footer">
+                  <a href="#contact" class="project-action-link">
+                    <span>Impact Details</span>
+                    <span>→</span>
+                  </a>
+                  <a href="https://github.com/maheshgouda05" target="_blank" rel="noopener noreferrer" class="project-github-btn" title="GitHub Profile">
+                    🐙
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 4: Developer Portfolio (This Project) -->
+            <article class="project-card" data-pcat="web">
+              <div class="project-thumbnail-wrapper">
+                <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=700&q=80"
+                  alt="Developer Portfolio"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="project-thumb-fallback" style="display: none;">
+                  <span class="fallback-icon">💻</span>
+                  <span>Portfolio Site</span>
+                </div>
+                <div class="project-thumb-overlay">
+                  <a href="#home" class="overlay-link-btn">Current Site 🌐</a>
+                </div>
+              </div>
+              <div class="project-card-body">
+                <div class="project-badge-meta-row">
+                  <span class="project-type-badge">Personal Brand</span>
+                  <span class="project-team-badge">Solo Project</span>
+                </div>
+                <h3 class="project-card-title">Glassmorphic Tech Portfolio</h3>
+                <p class="project-card-subheading">High-performance dark theme webfolio</p>
+                <p class="project-card-desc">
+                  A high-end developer portfolio engineered purely in HTML5, CSS3, and Vanilla JavaScript with ambient particle animations, glassmorphism, responsive sliders, and active section tracking.
+                </p>
+                <div class="project-card-tags">
+                  <span class="project-tag">HTML5</span>
+                  <span class="project-tag">CSS3</span>
+                  <span class="project-tag">Vanilla JS</span>
+                  <span class="project-tag">Canvas</span>
+                </div>
+                <div class="project-card-footer">
+                  <a href="https://github.com/maheshgouda05/protfolio" target="_blank" rel="noopener noreferrer" class="project-action-link">
+                    <span>Source Code</span>
+                    <span>→</span>
+                  </a>
+                  <a href="https://github.com/maheshgouda05/protfolio" target="_blank" rel="noopener noreferrer" class="project-github-btn" title="GitHub Repository">
+                    🐙
+                  </a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Slider Pagination Indicators -->
+        <div class="slider-dots-row" id="slider-dots-row"></div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================================================
+         [EDITABLE SECTION: TECHNICAL & PROFESSIONAL SKILLS]
+    ========================================================================== -->
+    <section id="skills">
+
+      <div class="section-badge-wrapper reveal-on-scroll">
+        <span class="section-badge">🥞 BALANCED ENGINEERING STACK</span>
+      </div>
+
+      <h2 class="section-title reveal-on-scroll">Technical &amp; Professional Skills</h2>
+      <p class="section-subtitle reveal-on-scroll">
+        A well-rounded technical foundation across core computer science, modern frontend frameworks, backend programming, and developer tools.
+      </p>
+
+      <!-- Category Filter Buttons -->
+      <div class="filter-controls-row reveal-on-scroll">
+        <button class="filter-btn active" data-skill-filter="all">All Skills</button>
+        <button class="filter-btn" data-skill-filter="frontend">Frontend &amp; UI</button>
+        <button class="filter-btn" data-skill-filter="backend">Backend &amp; DB</button>
+        <button class="filter-btn" data-skill-filter="core">Core CS</button>
+        <button class="filter-btn" data-skill-filter="tools">Tools &amp; Workflow</button>
+      </div>
+
+      <!-- Skills Cards Grid -->
+      <div class="skills-grid-container">
+
+        <!-- 1. Frontend Development -->
+        <div class="skill-category-card reveal-on-scroll" data-scat="frontend">
+          <div class="skill-card-top">
+            <div class="skill-icon-bubble">🎨</div>
+            <div class="skill-title-block">
+              <h3 class="skill-card-heading">Frontend Development</h3>
+              <span class="skill-competency-count">5 Core Technologies</span>
+            </div>
+          </div>
+          <div class="skill-bars-list">
+            <div class="skill-bar-row">
+              <div class="skill-bar-header">
+                <span class="skill-name-star"><span class="skill-star">★</span> HTML5 &amp; Semantic Web</span>
+                <span class="skill-percentage-text">92%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="92%"></div>
+              </div>
+            </div>
+            <div class="skill-bar-row">
+              <div class="skill-bar-header">
+                <span class="skill-name-star"><span class="skill-star">★</span> Modern CSS3 &amp; Glassmorphism</span>
+                <span class="skill-percentage-text">88%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="88%"></div>
+              </div>
+            </div>
+            <div class="skill-bar-row">
+              <div class="skill-bar-header">
+                <span class="skill-name-star"><span class="skill-star">★</span> JavaScript (ES6+)</span>
+                <span class="skill-percentage-text">85%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="85%"></div>
+              </div>
+            </div>
+            <div class="skill-bar-row">
+              <div class="skill-bar-header">
+                <span class="skill-name-star">React.js</span>
+                <span class="skill-percentage-text">78%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="78%"></div>
+              </div>
+            </div>
+            <div class="skill-bar-row">
+              <div class="skill-bar-header">
+                <span class="skill-name-star">Next.js Framework</span>
+                <span class="skill-percentage-text">72%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="72%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-card-footer">
+            <span class="star-icon">★</span>
+            <span>Highlighted Core Competency</span>
+          </div>
+        </div>
+
+        <!-- 2. Backend & Databases -->
+        <div class="skill-category-card reveal-on-scroll stagger-1" data-scat="backend">
+          <div class="skill-card-top">
+            <div class="skill-icon-bubble purple">⚙️</div>
+            <div class="skill-title-block">
+              <h3 class="skill-card-heading">Backend &amp; Databases</h3>
+              <span class="skill-competency-count">4 Core Technologies</span>
+            </div>
+          </div>
+          <div class="skill-bars-list">
+            <div class="skill-bar-row">
+              <div class="skill-bar-header">
+                <span class="skill-name-star"><span class="skill-star">★</span> Node.js &amp; Server Logic</span>
+                <span class="skill-percentage-text">78%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="78%"></div>
+              </div>
+            </div>
+            <div class="skill-bar-row">
+              <div class="skill-bar-header">
+                <span class="skill-name-star"><span class="skill-star">★</span> RESTful API Integration</span>
+                <span class="skill-percentage-text">82%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="82%"></div>
+              </div>
+            </div>
+            <div class="skill-bar-row">
+              <div class="skill-bar-header">
+                <span class="skill-name-star">Firebase Backend Suite</span>
+                <span class="skill-percentage-text">75%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="75%"></div>
+              </div>
+            </div>
+            <div class="skill-bar-row">
+              <div class="skill-bar-header">
+                <span class="skill-name-star">SQL &amp; Database Concepts</span>
+                <span class="skill-percentage-text">76%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="76%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-card-footer">
+            <span class="star-icon">★</span>
+            <span>Highlighted Core Competency</span>
+          </div>
+        </div>
+
+        <!-- 3. Core CS & Programming -->
+        <div class="skill-category-card reveal-on-scroll stagger-2" data-scat="core">
+          <div class="skill-card-top">
+            <div class="skill-icon-bubble emerald">🧠</div>
+            <div class="skill-title-block">
+              <h3 class="skill-card-heading">Core CS &amp; Programming</h3>
+              <span class="skill-competency-count">4 Fundamental Areas</span>
+            </div>
+          </div>
+          <div class="skill-bars-list">
+            <div class="skill-bar-row">
+              <div class="skill-bar-header">
+                <span class="skill-name-star"><span class="skill-star">★</span> Data Structures &amp; Algorithms</span>
+                <span class="skill-percentage-text">80%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="80%"></div>
+              </div>
+            </div>
+            <div class="skill-bar-row">
+              <div class="skill-bar-header">
+                <span class="skill-name-star"><span class="skill-star">★</span> Object-Oriented Programming (OOP)</span>
+                <span class="skill-percentage-text">84%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="84%"></div>
+              </div>
+            </div>
+            <div class="skill-bar-row">
+              <div class="skill-bar-header">
+                <span class="skill-name-star">Python Programming</span>
+                <span class="skill-percentage-text">80%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="80%"></div>
+              </div>
+            </div>
+            <div class="skill-bar-row">
+              <div class="skill-bar-header">
+                <span class="skill-name-star">Software Engineering Basics</span>
+                <span class="skill-percentage-text">82%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="82%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-card-footer">
+            <span class="star-icon">★</span>
+            <span>Highlighted Core Competency</span>
+          </div>
+        </div>
+
+        <!-- 4. Developer Tools & Platforms -->
+        <div class="skill-category-card reveal-on-scroll" data-scat="tools">
+          <div class="skill-card-top">
+            <div class="skill-icon-bubble">🛠️</div>
+            <div class="skill-title-block">
+              <h3 class="skill-card-heading">Tools &amp; Platforms</h3>
+              <span class="skill-competency-count">4 Developer Tools</span>
+            </div>
+          </div>
+          <div class="skill-bars-list">
+            <div class="skill-bar-row">
+              <div class="skill-bar-header">
+                <span class="skill-name-star"><span class="skill-star">★</span> Git &amp; GitHub Version Control</span>
+                <span class="skill-percentage-text">86%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="86%"></div>
+              </div>
+            </div>
+            <div class="skill-bar-row">
+              <div class="skill-bar-header">
+                <span class="skill-name-star">Visual Studio Code</span>
+                <span class="skill-percentage-text">90%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="90%"></div>
+              </div>
+            </div>
+            <div class="skill-bar-row">
+              <div class="skill-bar-header">
+                <span class="skill-name-star">AI-Assisted Development Tools</span>
+                <span class="skill-percentage-text">85%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="85%"></div>
+              </div>
+            </div>
+            <div class="skill-bar-row">
+              <div class="skill-bar-header">
+                <span class="skill-name-star">Browser DevTools &amp; Debugging</span>
+                <span class="skill-percentage-text">88%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="88%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-card-footer">
+            <span class="star-icon">★</span>
+            <span>Highlighted Core Competency</span>
+          </div>
+        </div>
+
+        <!-- 5. Professional & Collaborative Strengths -->
+        <div class="skill-category-card reveal-on-scroll stagger-1" data-scat="core">
+          <div class="skill-card-top">
+            <div class="skill-icon-bubble purple">🤝</div>
+            <div class="skill-title-block">
+              <h3 class="skill-card-heading">Professional &amp; Soft Skills</h3>
+              <span class="skill-competency-count">4 Key Attributes</span>
+            </div>
+          </div>
+          <div class="skill-bars-list">
+            <div class="skill-bar-row">
+              <div class="skill-bar-header">
+                <span class="skill-name-star"><span class="skill-star">★</span> Problem Solving &amp; Analytical Mindset</span>
+                <span class="skill-percentage-text">90%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="90%"></div>
+              </div>
+            </div>
+            <div class="skill-bar-row">
+              <div class="skill-bar-header">
+                <span class="skill-name-star">Quick Technical Learning</span>
+                <span class="skill-percentage-text">94%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="94%"></div>
+              </div>
+            </div>
+            <div class="skill-bar-row">
+              <div class="skill-bar-header">
+                <span class="skill-name-star">Team Collaboration</span>
+                <span class="skill-percentage-text">88%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="88%"></div>
+              </div>
+            </div>
+            <div class="skill-bar-row">
+              <div class="skill-bar-header">
+                <span class="skill-name-star">Technical Documentation</span>
+                <span class="skill-percentage-text">82%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill" data-progress="82%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-card-footer">
+            <span class="star-icon">★</span>
+            <span>Highlighted Core Competency</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================================================
+         [EDITABLE SECTION: ACHIEVEMENTS & CERTIFICATIONS]
+    ========================================================================== -->
+    <section id="achievements">
+
+      <div class="section-badge-wrapper reveal-on-scroll">
+        <span class="section-badge">🏆 HONORS &amp; VERIFIED CREDENTIALS</span>
+      </div>
+
+      <h2 class="section-title reveal-on-scroll">Achievements &amp; Certifications</h2>
+      <p class="section-subtitle reveal-on-scroll">
+        Recognized campus initiatives, hackathons, and verified technical industry certifications.
+      </p>
+
+      <!-- Certification Ticker -->
+      <div class="cert-ticker-bar reveal-on-scroll">
+        <span class="cert-ticker-tag">CERTIFICATION TICKER</span>
+        <div class="ticker-scroll-track">
+          <div class="ticker-content">
+            <!-- [EDITABLE]: Replace ticker text with your certifications -->
+            <span>★ [CERTIFICATE 1 NAME] — [ISSUER]</span>
+            <span class="ticker-dot">•</span>
+            <span>★ [CERTIFICATE 2 NAME] — [ISSUER]</span>
+            <span class="ticker-dot">•</span>
+            <span>★ [TECHNICAL WORKSHOP / HACKATHON RECOGNITION]</span>
+            <span class="ticker-dot">•</span>
+            <span>★ [CERTIFICATE 1 NAME] — [ISSUER]</span>
+            <span class="ticker-dot">•</span>
+            <span>★ [CERTIFICATE 2 NAME] — [ISSUER]</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dual Split Layout: Leadership & Awards on Left, Verified Certs on Right -->
+      <div class="achievements-dual-split">
+
+        <!-- Left Column: Leadership & Activities -->
+        <div class="recognition-col reveal-on-scroll">
+          <div class="column-header-row">
+            <h3 class="column-title">
+              <span>🎗️</span>
+              <span>Leadership &amp; Activities</span>
+            </h3>
+            <span class="column-badge">Milestones</span>
+          </div>
+          <div class="recognition-cards-list">
+
+            <!-- Item 1 -->
+            <div class="achievement-item-card">
+              <div class="item-top-row">
+                <div class="item-title-group">
+                  <!-- [EDITABLE]: Achievement title & role -->
+                  <h4 class="item-heading">[LEADERSHIP / CLUB ROLE TITLE]</h4>
+                  <span class="item-issuer-text">[ORGANIZATION / COLLEGE NAME]</span>
+                </div>
+                <span class="item-date-tag">[YEAR / DURATION]</span>
+              </div>
+              <p class="item-description-text">
+                [Add details of your leadership role, club activities, organizing workshops, or coordination responsibilities.]
+              </p>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="achievement-item-card">
+              <div class="item-top-row">
+                <div class="item-title-group">
+                  <h4 class="item-heading">Technical Projects &amp; Innovation Showcase</h4>
+                  <span class="item-issuer-text">Academic Engineering Forum</span>
+                </div>
+                <span class="item-date-tag">2024</span>
+              </div>
+              <p class="item-description-text">
+                Designed and demonstrated full-stack prototypes, receiving positive peer and faculty recognition for intuitive UI and problem formulation.
+              </p>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="achievement-item-card">
+              <div class="item-top-row">
+                <div class="item-title-group">
+                  <h4 class="item-heading">Hackathon &amp; Coding Participation</h4>
+                  <span class="item-issuer-text">College &amp; Inter-College Challenges</span>
+                </div>
+                <span class="item-date-tag">2023 — 2024</span>
+              </div>
+              <p class="item-description-text">
+                Actively participated in competitive programming and collaborative hackathon rounds, focusing on rapid prototyping and user-centric features.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Column: Verified Industry Certifications -->
+        <div class="certifications-col reveal-on-scroll stagger-1">
+          <div class="column-header-row">
+            <h3 class="column-title">
+              <span>🛡️</span>
+              <span>Verified Industry Certifications</span>
+            </h3>
+            <!-- [EDITABLE]: Number of credentials -->
+            <span class="column-badge">[X Verified Credentials]</span>
+          </div>
+          <div class="certifications-cards-list">
+
+            <!-- Certificate 1 -->
+            <div class="certificate-item-card">
+              <div class="item-top-row">
+                <div class="item-title-group">
+                  <!-- [EDITABLE]: Certificate name, issuer, date, URL -->
+                  <h4 class="item-heading">[CERTIFICATE 1 NAME e.g. Full Stack Web Development]</h4>
+                  <span class="item-issuer-text">Issuer: [ISSUER NAME e.g. Coursera / FreeCodeCamp / NPTEL]</span>
+                </div>
+                <span class="item-date-tag">[ISSUE DATE e.g. 2024]</span>
+              </div>
+              <div class="cert-meta-row">
+                <span class="cert-id-text">ID: [CREDENTIAL ID e.g. CERT-XXXXX]</span>
+                <a href="[VERIFICATION URL]" target="_blank" rel="noopener noreferrer" class="cert-verify-link">
+                  Verify ↗
+                </a>
+              </div>
+            </div>
+
+            <!-- Certificate 2 -->
+            <div class="certificate-item-card">
+              <div class="item-top-row">
+                <div class="item-title-group">
+                  <h4 class="item-heading">[CERTIFICATE 2 NAME e.g. Python Programming Fundamentals]</h4>
+                  <span class="item-issuer-text">Issuer: [ISSUER NAME e.g. HackerRank / Udemy / Infosys]</span>
+                </div>
+                <span class="item-date-tag">[ISSUE DATE e.g. 2024]</span>
+              </div>
+              <div class="cert-meta-row">
+                <span class="cert-id-text">ID: [CREDENTIAL ID e.g. CERT-YYYYY]</span>
+                <a href="[VERIFICATION URL]" target="_blank" rel="noopener noreferrer" class="cert-verify-link">
+                  Verify ↗
+                </a>
+              </div>
+            </div>
+
+            <!-- Certificate 3 -->
+            <div class="certificate-item-card">
+              <div class="item-top-row">
+                <div class="item-title-group">
+                  <h4 class="item-heading">[CERTIFICATE 3 NAME e.g. Relational Databases &amp; SQL]</h4>
+                  <span class="item-issuer-text">Issuer: [ISSUER NAME e.g. Oracle / IBM Skills / Coursera]</span>
+                </div>
+                <span class="item-date-tag">[ISSUE DATE e.g. 2023]</span>
+              </div>
+              <div class="cert-meta-row">
+                <span class="cert-id-text">ID: [CREDENTIAL ID e.g. CERT-ZZZZZ]</span>
+                <a href="[VERIFICATION URL]" target="_blank" rel="noopener noreferrer" class="cert-verify-link">
+                  Verify ↗
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================================================
+         [EDITABLE SECTION: CONTACT & DIRECT MESSAGING]
+    ========================================================================== -->
+    <section id="contact">
+
+      <div class="section-badge-wrapper reveal-on-scroll">
+        <span class="section-badge">✉️ LET'S BUILD TOGETHER</span>
+      </div>
+
+      <h2 class="section-title reveal-on-scroll">Direct Contact &amp; Opportunities</h2>
+      <p class="section-subtitle reveal-on-scroll">
+        Open to full-time engineering roles, software internships, collaborative freelance projects, and tech conversations.
+      </p>
+
+      <div class="contact-split-grid">
+
+        <!-- Left Column: Direct Contact Details Cards -->
+        <div class="contact-info-panel reveal-on-scroll">
+
+          <h3 class="contact-panel-title">Direct Contact Details</h3>
+          <p class="contact-panel-subtitle">Feel free to reach out directly via email, phone, or professional networks.</p>
+
+          <div class="contact-cards-list">
+
+            <!-- Email Card with Copy Button -->
+            <div class="contact-info-item">
+              <div class="info-item-left">
+                <div class="info-icon-bubble">✉️</div>
+                <div class="info-details">
+                  <span class="info-label">EMAIL ADDRESS</span>
+                  <a href="mailto:maheshbasarakod05@gmail.com" class="info-val-text" id="contact-email-text">
+                    maheshbasarakod05@gmail.com
+                  </a>
+                </div>
+              </div>
+              <button class="copy-btn" id="copy-email-btn" title="Copy Email to Clipboard" aria-label="Copy Email">
+                📋
+                <span class="copy-tooltip" id="email-tooltip">Copied!</span>
+              </button>
+            </div>
+
+            <!-- Phone Card with Copy Button -->
+            <div class="contact-info-item">
+              <div class="info-item-left">
+                <div class="info-icon-bubble">📞</div>
+                <div class="info-details">
+                  <span class="info-label">PHONE NUMBER</span>
+                  <!-- [EDITABLE]: Replace [YOUR PHONE NUMBER] with your phone number -->
+                  <a href="tel:[YOUR-PHONE-NUMBER]" class="info-val-text" id="contact-phone-text">
+                    [YOUR PHONE NUMBER]
+                  </a>
+                </div>
+              </div>
+              <button class="copy-btn" id="copy-phone-btn" title="Copy Phone to Clipboard" aria-label="Copy Phone">
+                📋
+                <span class="copy-tooltip" id="phone-tooltip">Copied!</span>
+              </button>
+            </div>
+
+            <!-- Location Card -->
+            <div class="contact-info-item">
+              <div class="info-item-left">
+                <div class="info-icon-bubble">📍</div>
+                <div class="info-details">
+                  <span class="info-label">CURRENT LOCATION</span>
+                  <span class="info-val-text">Bangalore, Karnataka, India</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Online Handles -->
+          <div class="online-handles-group">
+            <span class="handles-label">ONLINE PROFILES</span>
+            <div class="handles-buttons-row">
+              <a href="https://github.com/maheshgouda05" target="_blank" rel="noopener noreferrer" class="handle-action-btn">
+                <span>🐙</span>
+                <span>GitHub</span>
+              </a>
+              <a href="https://www.linkedin.com/in/[YOUR-USERNAME]/" target="_blank" rel="noopener noreferrer" class="handle-action-btn">
+                <span>💼</span>
+                <span>LinkedIn</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Glassmorphic Direct Message Form -->
+        <div class="contact-form-panel reveal-on-scroll stagger-1">
+
+          <h3 class="contact-panel-title">Send Direct Message</h3>
+          <p class="contact-panel-subtitle">Fill in the fields below to send a message directly to my inbox.</p>
+
+          <form id="portfolio-contact-form" class="contact-form" novalidate>
+
+            <!-- Inquiry Category Pills -->
+            <div class="category-selection-wrap">
+              <span class="category-label">INQUIRY CATEGORY</span>
+              <div class="category-pills-row">
+                <button type="button" class="category-pill selected" data-category="Job Opportunity">Job Opportunity</button>
+                <button type="button" class="category-pill" data-category="Project Collaboration">Project Collaboration</button>
+                <button type="button" class="category-pill" data-category="General Inquiry">General Inquiry</button>
+                <button type="button" class="category-pill" data-category="Mentorship/Discussion">Mentorship / Chat</button>
+              </div>
+              <input type="hidden" name="inquiry_category" id="inquiry-category-input" value="Job Opportunity">
+            </div>
+
+            <!-- Form Inputs Grid -->
+            <div class="form-inputs-grid">
+              <div class="form-field-group">
+                <label for="form-name" class="field-label">YOUR NAME <span class="req-star">*</span></label>
+                <input type="text" id="form-name" name="name" class="form-input" placeholder="e.g. Alex Smith" required>
+              </div>
+              <div class="form-field-group">
+                <label for="form-email" class="field-label">EMAIL ADDRESS <span class="req-star">*</span></label>
+                <input type="email" id="form-email" name="email" class="form-input" placeholder="e.g. alex@example.com" required>
+              </div>
+            </div>
+
+            <div class="form-field-group">
+              <label for="form-subject" class="field-label">SUBJECT LINE</label>
+              <input type="text" id="form-subject" name="subject" class="form-input" placeholder="e.g. Software Engineer Role Inquiry">
+            </div>
+
+            <div class="form-field-group">
+              <label for="form-message" class="field-label">YOUR MESSAGE <span class="req-star">*</span></label>
+              <textarea id="form-message" name="message" class="form-textarea" placeholder="Write your message or project requirements here..." required></textarea>
+            </div>
+
+            <!-- Status Feedback Alert Banner -->
+            <div id="form-status-alert" class="form-feedback-alert" role="alert"></div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn-glow" id="form-submit-btn">
+              <span>✈️</span>
+              <span>Submit Direct Message</span>
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ==========================================================================
+       [EDITABLE SECTION: FOOTER]
+  ========================================================================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+
+      <div class="footer-brand">
+        <a href="#home" class="footer-logo">MB<span>.</span></a>
+        <p class="footer-tagline">Building thoughtful digital experiences and scalable software solutions.</p>
+      </div>
+
+      <nav class="footer-links-row" aria-label="Footer Navigation">
+        <a href="#home" class="footer-link">Home</a>
+        <a href="#about" class="footer-link">About</a>
+        <a href="#education" class="footer-link">Education</a>
+        <a href="#experience" class="footer-link">Experience</a>
+        <a href="#projects" class="footer-link">Projects</a>
+        <a href="#skills" class="footer-link">Skills</a>
+        <a href="#achievements" class="footer-link">Achievements</a>
+        <a href="#contact" class="footer-link">Contact</a>
+      </nav>
+
+      <div class="footer-bottom-row">
+        <p class="copyright-text">
+          &copy; <span id="copyright-year">2026</span> Mahesh Basarkod. Crafted with precision &amp; passion.
+        </p>
+        <a href="#home" class="back-to-top-btn" aria-label="Back to top">
+          <span>Back to Top</span>
+          <span>↑</span>
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Core JavaScript -->
+  <script src="script.js"></script>
 
 </body>
 
