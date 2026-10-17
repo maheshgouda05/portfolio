@@ -295,7 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Generate direct mailto link to official email
       const emailSubject = encodeURIComponent(`[Portfolio Inquiry: ${category}] ${subject || 'Message from ' + name}`);
       const emailBody = encodeURIComponent(
-        `Hi Mahesh,\n\nSender Name: ${name}\nSender Email: ${email}\nInquiry Category: ${category}\n\nMessage:\n${message}\n\n---\nPrepared via Mahesh Basarakod Portfolio Contact Form`
+        `Hi Mahesh,\n\nSender Name: ${name}\nSender Email: ${email}\nInquiry Category: ${category}\n\nMessage:\n${message}\n\n---\nPrepared via Mahesh Basarkhoda Portfolio Contact Form`
       );
       const mailtoUrl = `mailto:maheshbasarakod05@gmail.com?subject=${emailSubject}&body=${emailBody}`;
 
