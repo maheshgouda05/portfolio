@@ -138,11 +138,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================================================
   const roleDynamicText = document.getElementById('role-dynamic-text');
   const rolePhrases = [
-    'Full Stack Web Development',
-    'Interactive UI & Responsive Web',
-    'Scalable RESTful API Systems',
-    'Modern Database Architectures',
-    'Algorithmic Problem Solving'
+    'Data Science & Machine Learning',
+    'Backend Engineering & REST APIs',
+    'Data Visualization & Analytics',
+    'Database Design & Integration',
+    'Computer Vision with OpenCV'
   ];
 
   if (roleDynamicText && !prefersReducedMotion) {
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
       showcaseCards.forEach((card) => {
         const cardCategory = card.getAttribute('data-category') || '';
         if (filterCategory === 'all' || cardCategory.includes(filterCategory)) {
-          card.style.display = 'block';
+          card.style.display = '';
           card.style.opacity = '1';
         } else {
           card.style.display = 'none';
@@ -242,6 +242,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  setupCopyButton('btn-copy-email-official', 'contact-email-official-val', 'tooltip-email-official');
+  setupCopyButton('btn-copy-email-personal', 'contact-email-personal-val', 'tooltip-email-personal');
   setupCopyButton('btn-copy-email', 'contact-email-val', 'tooltip-email');
   setupCopyButton('btn-copy-phone', 'contact-phone-val', 'tooltip-phone');
 
@@ -290,21 +292,22 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Generate direct mailto link
-      const emailSubject = encodeURIComponent(`[Portfolio: ${category}] ${subject || 'Inquiry from ' + name}`);
+      // Generate direct mailto link to official email
+      const emailSubject = encodeURIComponent(`[Portfolio Inquiry: ${category}] ${subject || 'Message from ' + name}`);
       const emailBody = encodeURIComponent(
-        `Hi Mahesh,\n\nName: ${name}\nEmail: ${email}\nInquiry Category: ${category}\n\nMessage:\n${message}\n\n---\nSent via Developer Portfolio`
+        `Hi Mahesh,\n\nSender Name: ${name}\nSender Email: ${email}\nInquiry Category: ${category}\n\nMessage:\n${message}\n\n---\nPrepared via Mahesh Basarakod Portfolio Contact Form`
       );
       const mailtoUrl = `mailto:maheshbasarakod05@gmail.com?subject=${emailSubject}&body=${emailBody}`;
 
       feedbackBanner.className = 'form-feedback-banner success';
       feedbackBanner.innerHTML = `
-        <strong>✓ Thank you, ${name}! Your message details are verified.</strong><br>
+        <strong>✓ Thank you, ${name}! Your inquiry has been formatted.</strong><br>
         <span style="font-size:0.84rem; opacity:0.95; display:inline-block; margin-top:4px;">
-          To dispatch this message directly to Mahesh's inbox, click the button below to launch your email client:
+          Click the button below to launch your default email client and dispatch this message directly to <strong>maheshbasarakod05@gmail.com</strong>:
         </span><br>
-        <a href="${mailtoUrl}" style="display:inline-flex; align-items:center; gap:6px; margin-top:10px; padding:8px 18px; background:#FF4F18; color:#ffffff; font-weight:700; border-radius:4px; text-decoration:none; font-size:0.86rem;">
-          Open Email Client Now ↗
+        <a href="${mailtoUrl}" style="display:inline-flex; align-items:center; gap:6px; margin-top:10px; padding:10px 20px; background:#FF4F18; color:#ffffff; font-weight:700; border-radius:4px; text-decoration:none; font-size:0.88rem;">
+          <span>Open Email Client &amp; Send</span>
+          <span>↗</span>
         </a>
       `;
       feedbackBanner.style.display = 'block';
@@ -316,7 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 9. Subtle Scroll Reveal Animations
   // ==========================================================================
   const revealTargets = document.querySelectorAll(
-    '.showcase-card, .skill-matrix-panel, .ledger-card, .cert-card, .milestone-card, .editorial-quote-card, .principles-panel, .coordinates-card, .dispatch-form-card'
+    '.showcase-card, .skill-matrix-panel, .ledger-card, .cert-card, .milestone-card, .editorial-quote-card, .principles-panel, .coordinates-card, .dispatch-form-card, .cert-placeholder-card'
   );
 
   revealTargets.forEach((el) => el.classList.add('editorial-reveal'));
