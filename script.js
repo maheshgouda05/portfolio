@@ -1,17 +1,7 @@
 /* ==========================================================================
-   MAHESH BASARKOD — MODERN EDITORIAL DEVELOPER PORTFOLIO
-   Interactive Client-side Engine (Vanilla JS)
-   Features:
-     1. Document Reading Progress Bar
-     2. Sticky Header with Scroll Detection
-     3. Mobile Navigation Drawer & Keyboard Handling
-     4. Dynamic Section Spy (IntersectionObserver Navigation Highlighting)
-     5. Typewriter Role Headline Animation
-     6. Studio Projects Filter System
-     7. 1-Click Clipboard Copy with Feedback Tooltips
-     8. Direct Contact Dispatch Form Validation & Mailto Generator
-     9. Scroll Reveal Animations (IntersectionObserver)
-    10. Dynamic Copyright Year
+   MAHESH BASARKHODA — PERSONAL PORTFOLIO
+   Theme: Command Center / Futuristic Dark Glassmorphism
+   Client-side Interactive Engine (Vanilla JS)
 ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -19,187 +9,225 @@ document.addEventListener('DOMContentLoaded', () => {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // ==========================================================================
-  // 1. Dynamic Reading Progress Bar
+  // 1. Live Bangalore Clock
   // ==========================================================================
-  const readingProgress = document.getElementById('reading-progress');
-  if (readingProgress) {
-    window.addEventListener('scroll', () => {
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      if (totalHeight > 0) {
-        const progressPct = (window.scrollY / totalHeight) * 100;
-        readingProgress.style.width = `${Math.min(100, Math.max(0, progressPct))}%`;
-      }
-    }, { passive: true });
-  }
-
-
-  // ==========================================================================
-  // 2. Sticky Header Scroll State
-  // ==========================================================================
-  const siteHeader = document.getElementById('site-header');
-  if (siteHeader) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 30) {
-        siteHeader.classList.add('scrolled');
-      } else {
-        siteHeader.classList.remove('scrolled');
-      }
-    }, { passive: true });
-  }
-
-
-  // ==========================================================================
-  // 3. Mobile Navigation Drawer & Keyboard Handling
-  // ==========================================================================
-  const mobileToggle = document.getElementById('mobile-menu-toggle');
-  const mobilePanel = document.getElementById('mobile-nav-panel');
-  const mobileClose = document.getElementById('mobile-nav-close');
-  const mobileLinks = document.querySelectorAll('.mobile-nav-link');
-
-  function openMobileMenu() {
-    if (!mobilePanel || !mobileToggle) return;
-    mobilePanel.classList.add('open');
-    mobilePanel.setAttribute('aria-hidden', 'false');
-    mobileToggle.classList.add('active');
-    mobileToggle.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeMobileMenu() {
-    if (!mobilePanel || !mobileToggle) return;
-    mobilePanel.classList.remove('open');
-    mobilePanel.setAttribute('aria-hidden', 'true');
-    mobileToggle.classList.remove('active');
-    mobileToggle.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  }
-
-  if (mobileToggle) {
-    mobileToggle.addEventListener('click', () => {
-      if (mobilePanel && mobilePanel.classList.contains('open')) {
-        closeMobileMenu();
-      } else {
-        openMobileMenu();
-      }
-    });
-  }
-
-  if (mobileClose) {
-    mobileClose.addEventListener('click', closeMobileMenu);
-  }
-
-  mobileLinks.forEach((link) => {
-    link.addEventListener('click', closeMobileMenu);
-  });
-
-  // Close on Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mobilePanel && mobilePanel.classList.contains('open')) {
-      closeMobileMenu();
+  const liveTimeElem = document.getElementById('live-time');
+  function updateLiveTime() {
+    if (!liveTimeElem) return;
+    try {
+      const now = new Date();
+      // Format time in Indian Standard Time (Asia/Kolkata)
+      const options = {
+        timeZone: 'Asia/Kolkata',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      };
+      liveTimeElem.textContent = new Intl.DateTimeFormat('en-US', options).format(now);
+    } catch (e) {
+      liveTimeElem.textContent = new Date().toLocaleTimeString();
     }
-  });
-
-
-  // ==========================================================================
-  // 4. Dynamic Section Spy (IntersectionObserver Navigation Highlighting)
-  // ==========================================================================
-  const trackedSections = document.querySelectorAll('section[id]');
-  const navAnchors = document.querySelectorAll('.nav-anchor');
-
-  if ('IntersectionObserver' in window && trackedSections.length > 0) {
-    const sectionObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const currentId = entry.target.getAttribute('id');
-            navAnchors.forEach((anchor) => {
-              const href = anchor.getAttribute('href');
-              if (href === `#${currentId}`) {
-                anchor.classList.add('active');
-              } else {
-                anchor.classList.remove('active');
-              }
-            });
-          }
-        });
-      },
-      {
-        rootMargin: '-20% 0px -65% 0px',
-        threshold: 0
-      }
-    );
-
-    trackedSections.forEach((sec) => sectionObserver.observe(sec));
   }
+  updateLiveTime();
+  setInterval(updateLiveTime, 1000);
 
 
   // ==========================================================================
-  // 5. Typewriter Role Headline Animation
+  // 2. Typewriter Role Headline Animation
   // ==========================================================================
-  const roleDynamicText = document.getElementById('role-dynamic-text');
+  const roleTypewriterElem = document.getElementById('role-typewriter');
   const rolePhrases = [
     'Data Science & Machine Learning',
-    'Backend Engineering & REST APIs',
-    'Data Visualization & Analytics',
-    'Database Design & Integration',
-    'Computer Vision with OpenCV'
+    'Backend Systems & REST APIs',
+    'Computer Vision with OpenCV',
+    'Database Architecture & Analytics',
+    'Autonomous AI & Smart Solutions'
   ];
 
-  if (roleDynamicText && !prefersReducedMotion) {
+  if (roleTypewriterElem && !prefersReducedMotion) {
     let phraseIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    let typingSpeed = 75;
+    let typingSpeed = 65;
 
-    function runTypewriter() {
+    function handleTypewriter() {
       const currentPhrase = rolePhrases[phraseIndex];
 
       if (isDeleting) {
-        roleDynamicText.textContent = currentPhrase.substring(0, charIndex - 1);
+        roleTypewriterElem.textContent = currentPhrase.substring(0, charIndex - 1);
         charIndex--;
-        typingSpeed = 35;
+        typingSpeed = 30;
       } else {
-        roleDynamicText.textContent = currentPhrase.substring(0, charIndex + 1);
+        roleTypewriterElem.textContent = currentPhrase.substring(0, charIndex + 1);
         charIndex++;
-        typingSpeed = 75;
+        typingSpeed = 65;
       }
 
       if (!isDeleting && charIndex === currentPhrase.length) {
-        typingSpeed = 2200; // Pause at completion
+        typingSpeed = 2200; // Pause when word is completely typed
         isDeleting = true;
       } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
         phraseIndex = (phraseIndex + 1) % rolePhrases.length;
-        typingSpeed = 400; // Brief pause before typing next
+        typingSpeed = 400; // Pause before typing next word
       }
 
-      setTimeout(runTypewriter, typingSpeed);
+      setTimeout(handleTypewriter, typingSpeed);
     }
 
-    setTimeout(runTypewriter, 600);
+    setTimeout(handleTypewriter, 500);
   }
 
 
   // ==========================================================================
-  // 6. Studio Projects Filter System
+  // 3. Mobile Navigation Drawer & Hamburger Menu
   // ==========================================================================
-  const filterButtons = document.querySelectorAll('.editorial-filter-btn');
-  const showcaseCards = document.querySelectorAll('.showcase-card');
+  const mobileToggleBtn = document.getElementById('mobile-menu-toggle');
+  const mobileNavPanel = document.getElementById('mobile-nav-panel');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-item');
 
-  filterButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      filterButtons.forEach((b) => b.classList.remove('active'));
-      btn.classList.add('active');
+  function openMobileNav() {
+    if (!mobileNavPanel || !mobileToggleBtn) return;
+    mobileNavPanel.classList.add('open');
+    mobileNavPanel.setAttribute('aria-hidden', 'false');
+    mobileToggleBtn.classList.add('active');
+    mobileToggleBtn.setAttribute('aria-expanded', 'true');
+  }
 
-      const filterCategory = btn.getAttribute('data-filter') || 'all';
+  function closeMobileNav() {
+    if (!mobileNavPanel || !mobileToggleBtn) return;
+    mobileNavPanel.classList.remove('open');
+    mobileNavPanel.setAttribute('aria-hidden', 'true');
+    mobileToggleBtn.classList.remove('active');
+    mobileToggleBtn.setAttribute('aria-expanded', 'false');
+  }
 
-      showcaseCards.forEach((card) => {
+  if (mobileToggleBtn) {
+    mobileToggleBtn.addEventListener('click', () => {
+      const isOpen = mobileNavPanel.classList.contains('open');
+      if (isOpen) {
+        closeMobileNav();
+      } else {
+        openMobileNav();
+      }
+    });
+  }
+
+  mobileNavLinks.forEach((link) => {
+    link.addEventListener('click', closeMobileNav);
+  });
+
+  // Close on Escape key press
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileNavPanel && mobileNavPanel.classList.contains('open')) {
+      closeMobileNav();
+    }
+  });
+
+  // Close when clicking outside header
+  document.addEventListener('click', (e) => {
+    const mobileHeader = document.getElementById('mobile-header');
+    if (mobileNavPanel && mobileNavPanel.classList.contains('open') && mobileHeader && !mobileHeader.contains(e.target)) {
+      closeMobileNav();
+    }
+  });
+
+
+  // ==========================================================================
+  // 4. Section Scroll Spy (Floating Dock & Active Links)
+  // ==========================================================================
+  const trackedSections = document.querySelectorAll('section[id]');
+  const dockLinks = document.querySelectorAll('.dock-link');
+  const mobileLinks = document.querySelectorAll('.mobile-nav-item');
+
+  function updateActiveSection(currentId) {
+    let activeTarget = currentId;
+    if (currentId === 'hero') {
+      activeTarget = 'about';
+    }
+
+    dockLinks.forEach((link) => {
+      const sectionName = link.getAttribute('data-section');
+      if (sectionName === activeTarget) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+
+    mobileLinks.forEach((link) => {
+      const href = link.getAttribute('href');
+      if (href === `#${activeTarget}`) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  }
+
+  // Set initial active state to 'about' immediately
+  updateActiveSection('about');
+
+  if ('IntersectionObserver' in window && trackedSections.length > 0) {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -55% 0px',
+      threshold: 0
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const currentId = entry.target.getAttribute('id');
+          updateActiveSection(currentId);
+        }
+      });
+    }, observerOptions);
+
+    trackedSections.forEach((sec) => sectionObserver.observe(sec));
+  } else {
+    // Scroll fallback
+    window.addEventListener('scroll', () => {
+      let currentSection = 'about';
+      trackedSections.forEach((sec) => {
+        const top = sec.offsetTop - 150;
+        if (window.scrollY >= top) {
+          currentSection = sec.getAttribute('id');
+        }
+      });
+      updateActiveSection(currentSection);
+    }, { passive: true });
+  }
+
+
+  // ==========================================================================
+  // 5. Project Hub Filter System
+  // ==========================================================================
+  const filterTabs = document.querySelectorAll('.filter-tab');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  filterTabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      filterTabs.forEach((t) => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      const filterCategory = tab.getAttribute('data-filter') || 'all';
+
+      projectCards.forEach((card) => {
         const cardCategory = card.getAttribute('data-category') || '';
         if (filterCategory === 'all' || cardCategory.includes(filterCategory)) {
-          card.style.display = '';
-          card.style.opacity = '1';
+          card.style.display = 'flex';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 10);
         } else {
-          card.style.display = 'none';
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(8px)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 200);
         }
       });
     });
@@ -207,30 +235,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ==========================================================================
-  // 7. 1-Click Clipboard Copy with Feedback Tooltips
+  // 6. 1-Click Clipboard Copy with Feedback Tooltips
   // ==========================================================================
-  function setupCopyButton(btnId, valId, tooltipId) {
-    const btn = document.getElementById(btnId);
-    const valElem = document.getElementById(valId);
+  function setupClipboardCopy(buttonId, valueId, tooltipId) {
+    const btn = document.getElementById(buttonId);
+    const valElem = document.getElementById(valueId);
     const tooltip = document.getElementById(tooltipId);
     if (!btn || !valElem || !tooltip) return;
 
     btn.addEventListener('click', async () => {
-      const text = valElem.textContent.trim();
+      const textToCopy = valElem.textContent.trim();
       try {
         if (navigator.clipboard && navigator.clipboard.writeText) {
-          await navigator.clipboard.writeText(text);
+          await navigator.clipboard.writeText(textToCopy);
         } else {
-          // Fallback
-          const tempInput = document.createElement('textarea');
-          tempInput.value = text;
-          tempInput.style.position = 'fixed';
-          tempInput.style.opacity = '0';
-          document.body.appendChild(tempInput);
-          tempInput.select();
+          const tempArea = document.createElement('textarea');
+          tempArea.value = textToCopy;
+          tempArea.style.position = 'fixed';
+          tempArea.style.opacity = '0';
+          document.body.appendChild(tempArea);
+          tempArea.select();
           document.execCommand('copy');
-          document.body.removeChild(tempInput);
+          document.body.removeChild(tempArea);
         }
+
         tooltip.textContent = 'Copied!';
         tooltip.classList.add('show');
         setTimeout(() => tooltip.classList.remove('show'), 2000);
@@ -242,112 +270,107 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  setupCopyButton('btn-copy-email-official', 'contact-email-official-val', 'tooltip-email-official');
-  setupCopyButton('btn-copy-email-personal', 'contact-email-personal-val', 'tooltip-email-personal');
-  setupCopyButton('btn-copy-email', 'contact-email-val', 'tooltip-email');
-  setupCopyButton('btn-copy-phone', 'contact-phone-val', 'tooltip-phone');
+  setupClipboardCopy('btn-copy-email', 'contact-email-val', 'tooltip-email');
+  setupClipboardCopy('btn-copy-phone', 'contact-phone-val', 'tooltip-phone');
 
 
   // ==========================================================================
-  // 8. Direct Contact Dispatch Form Validation & Mailto Generator
+  // 7. Interactive Contact Dispatch Form
   // ==========================================================================
-  const contactForm = document.getElementById('contact-dispatch-form');
-  const inquiryButtons = document.querySelectorAll('.inquiry-btn');
-  const inquiryInput = document.getElementById('inquiry_category');
-  const feedbackBanner = document.getElementById('form-feedback-banner');
+  const inquiryButtons = document.querySelectorAll('.inquiry-pill');
+  const inquiryInput = document.getElementById('inquiry-category-input');
+  const contactForm = document.getElementById('contact-form');
+  const formFeedback = document.getElementById('form-feedback');
 
-  inquiryButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      inquiryButtons.forEach((b) => b.classList.remove('active'));
-      btn.classList.add('active');
+  inquiryButtons.forEach((pill) => {
+    pill.addEventListener('click', () => {
+      inquiryButtons.forEach((p) => p.classList.remove('active'));
+      pill.classList.add('active');
       if (inquiryInput) {
-        inquiryInput.value = btn.getAttribute('data-category') || 'General Inquiry';
+        inquiryInput.value = pill.getAttribute('data-val') || 'General Discussion';
       }
     });
   });
 
-  if (contactForm && feedbackBanner) {
+  if (contactForm && formFeedback) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      const name = (document.getElementById('form-sender-name')?.value || '').trim();
-      const email = (document.getElementById('form-sender-email')?.value || '').trim();
+      const name = (document.getElementById('form-name')?.value || '').trim();
+      const email = (document.getElementById('form-email')?.value || '').trim();
       const subject = (document.getElementById('form-subject')?.value || '').trim();
       const message = (document.getElementById('form-message')?.value || '').trim();
-      const category = inquiryInput ? inquiryInput.value : 'General Inquiry';
+      const category = inquiryInput ? inquiryInput.value : 'General Discussion';
 
-      // Validation check
+      // Validation
       if (!name || !email || !message) {
-        feedbackBanner.className = 'form-feedback-banner error';
-        feedbackBanner.innerHTML = '<strong>⚠️ Required fields missing:</strong> Please provide your name, valid email address, and message.';
-        feedbackBanner.style.display = 'block';
+        formFeedback.className = 'form-feedback-box error';
+        formFeedback.innerHTML = '⚠️ <strong>Required fields missing:</strong> Please provide your name, email address, and message.';
+        formFeedback.style.display = 'block';
         return;
       }
 
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
-        feedbackBanner.className = 'form-feedback-banner error';
-        feedbackBanner.innerHTML = '<strong>⚠️ Invalid email:</strong> Please enter a correctly formatted email address (e.g. name@domain.com).';
-        feedbackBanner.style.display = 'block';
+        formFeedback.className = 'form-feedback-box error';
+        formFeedback.innerHTML = '⚠️ <strong>Invalid email format:</strong> Please enter a valid email address (e.g. name@domain.com).';
+        formFeedback.style.display = 'block';
         return;
       }
 
-      // Generate direct mailto link to official email
-      const emailSubject = encodeURIComponent(`[Portfolio Inquiry: ${category}] ${subject || 'Message from ' + name}`);
-      const emailBody = encodeURIComponent(
-        `Hi Mahesh,\n\nSender Name: ${name}\nSender Email: ${email}\nInquiry Category: ${category}\n\nMessage:\n${message}\n\n---\nPrepared via Mahesh Basarkhoda Portfolio Contact Form`
+      // Generate direct mailto link to maheshbasarakod05@gmail.com
+      const mailSubject = encodeURIComponent(`[Portfolio Inquiry: ${category}] ${subject || 'New Message from ' + name}`);
+      const mailBody = encodeURIComponent(
+        `Hi Mahesh,\n\nName: ${name}\nEmail: ${email}\nPurpose: ${category}\n\nMessage:\n${message}\n\n---\nSent via Mahesh Basarkhoda Portfolio Website`
       );
-      const mailtoUrl = `mailto:maheshbasarakod05@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+      const mailtoUrl = `mailto:maheshbasarakod05@gmail.com?subject=${mailSubject}&body=${mailBody}`;
 
-      feedbackBanner.className = 'form-feedback-banner success';
-      feedbackBanner.innerHTML = `
-        <strong>✓ Thank you, ${name}! Your inquiry has been formatted.</strong><br>
-        <span style="font-size:0.84rem; opacity:0.95; display:inline-block; margin-top:4px;">
-          Click the button below to launch your default email client and dispatch this message directly to <strong>maheshbasarakod05@gmail.com</strong>:
+      formFeedback.className = 'form-feedback-box success';
+      formFeedback.innerHTML = `
+        <strong>✓ Thank you, ${name}! Your message is prepared.</strong><br>
+        <span style="font-size: 0.82rem; opacity: 0.95; display: inline-block; margin-top: 4px;">
+          Click the button below to send directly via your mail client to <strong>maheshbasarakod05@gmail.com</strong>:
         </span><br>
-        <a href="${mailtoUrl}" style="display:inline-flex; align-items:center; gap:6px; margin-top:10px; padding:10px 20px; background:#FF4F18; color:#ffffff; font-weight:700; border-radius:4px; text-decoration:none; font-size:0.88rem;">
+        <a href="${mailtoUrl}" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; padding: 8px 18px; background: #0ea5e9; color: #0e1217; font-weight: 700; border-radius: 6px; text-decoration: none; font-size: 0.85rem;">
           <span>Open Email Client &amp; Send</span>
           <span>↗</span>
         </a>
       `;
-      feedbackBanner.style.display = 'block';
+      formFeedback.style.display = 'block';
     });
   }
 
 
   // ==========================================================================
-  // 9. Subtle Scroll Reveal Animations
+  // 8. Scroll Reveal Animations (GPU Accelerated)
   // ==========================================================================
-  const revealTargets = document.querySelectorAll(
-    '.showcase-card, .skill-matrix-panel, .ledger-card, .cert-card, .milestone-card, .editorial-quote-card, .principles-panel, .coordinates-card, .dispatch-form-card, .cert-placeholder-card'
+  const cardsToReveal = document.querySelectorAll(
+    '.glass-card, .hero-bio-lead, .hero-pills-wrap, .hero-actions-row'
   );
 
-  revealTargets.forEach((el) => el.classList.add('editorial-reveal'));
+  cardsToReveal.forEach((el) => el.classList.add('reveal-on-scroll'));
 
   if ('IntersectionObserver' in window && !prefersReducedMotion) {
-    const revealObserver = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.08,
-        rootMargin: '0px 0px -40px 0px'
-      }
-    );
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.08,
+      rootMargin: '0px 0px -40px 0px'
+    });
 
-    revealTargets.forEach((el) => revealObserver.observe(el));
+    cardsToReveal.forEach((el) => revealObserver.observe(el));
   } else {
-    revealTargets.forEach((el) => el.classList.add('revealed'));
+    cardsToReveal.forEach((el) => el.classList.add('revealed'));
   }
 
 
   // ==========================================================================
-  // 10. Automatic Copyright Year
+  // 9. Dynamic Copyright Year
   // ==========================================================================
   const yearElem = document.getElementById('current-year');
   if (yearElem) {

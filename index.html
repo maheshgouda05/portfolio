@@ -1,1550 +1,1221 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Mahesh Basarkhoda — Third-year Computer Science Engineering student specializing in Data Science, Backend Developer, and ML & Data Visualization Enthusiast based in Whitefield, Bengaluru.">
+    content="Mahesh Basarkhoda — Computer Science Engineering (Data Science) student at MVJ College of Engineering, Bengaluru. Backend Developer, Machine Learning, Computer Vision & Data Analytics.">
   <meta name="author" content="Mahesh Basarkhoda">
   <meta name="keywords"
-    content="Mahesh Basarkhoda, Data Science, Backend Developer, Machine Learning, Data Visualization, OpenCV, Python, FastAPI, MongoDB, Bengaluru, Computer Science">
+    content="Mahesh Basarkhoda, MVJ College of Engineering, Bengaluru, Computer Science, Data Science, Machine Learning, Backend Developer, Python, OpenCV, FastAPI, Node.js">
 
-  <title>Mahesh Basarkhoda — Data Science Student &amp; Backend Developer</title>
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Mahesh Basarkhoda | Data Science &amp; Backend Developer">
+  <meta property="og:description"
+    content="Third-year CSE (Data Science) student at MVJ College of Engineering, Bengaluru. Specializing in Backend Systems, Machine Learning, and Computer Vision.">
+  <meta property="og:type" content="website">
 
-  <!-- Typography: Modern Editorial (Plus Jakarta Sans + Instrument Serif + JetBrains Mono) -->
+  <title>Mahesh Basarkhoda | Data Science &amp; Backend Developer</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
 
-  <!-- Core Stylesheet (Warm Ivory, Deep Navy & Electric Orange) -->
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230ea5e9'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='800' font-size='14' fill='%23ffffff'%3EMB%3C/text%3E%3C/svg%3E">
+
+  <!-- Core Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- Reading Progress Bar -->
-  <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
-
-  <!-- Noise Overlay for Warm Editorial Texture -->
-  <div class="editorial-noise" aria-hidden="true"></div>
-
-  <!-- ==========================================================================
-       [SITE HEADER / NAVIGATION]
-  ========================================================================== -->
-  <header class="site-header" id="site-header">
-    <div class="nav-container">
-
-      <!-- Monogram & Identity -->
-      <a href="#hero" class="brand-link" aria-label="Mahesh Basarkhoda — Return to top">
-        <span class="brand-monogram">MB</span>
-        <div class="brand-meta">
-          <span class="brand-title">Mahesh Basarkhoda</span>
-          <span class="brand-role">Data Science &amp; Backend</span>
-        </div>
-      </a>
-
-      <!-- Live Availability Tag -->
-      <div class="nav-availability" title="Open for software engineering roles, data science projects and internships">
-        <span class="pulse-dot"></span>
-        <span class="availability-text">Open for Roles &amp; Internships</span>
-      </div>
-
-      <!-- Desktop Navigation Links -->
-      <nav class="desktop-nav" aria-label="Primary Navigation">
-        <ul class="nav-links-list">
-          <li><a href="#about" class="nav-anchor"><span class="nav-num">01.</span>About</a></li>
-          <li><a href="#projects" class="nav-anchor"><span class="nav-num">02.</span>Projects</a></li>
-          <li><a href="#skills" class="nav-anchor"><span class="nav-num">03.</span>Skills</a></li>
-          <li><a href="#education" class="nav-anchor"><span class="nav-num">04.</span>Education</a></li>
-          <li><a href="#activities" class="nav-anchor"><span class="nav-num">05.</span>Activities</a></li>
-          <li><a href="#contact" class="nav-anchor"><span class="nav-num">06.</span>Contact</a></li>
-        </ul>
-      </nav>
-
-      <!-- Action Buttons & Mobile Hamburger -->
-      <div class="nav-actions">
-        <!-- Optional Resume link (place resume.pdf in workspace root) -->
-        <a href="resume.pdf" class="btn-nav-outline" download>
-          <span>Resume</span>
-          <span class="btn-arrow">↗</span>
-        </a>
-        <a href="#contact" class="btn-nav-primary">
-          <span>Let's Talk</span>
-        </a>
-
-        <!-- Mobile Menu Toggle Button -->
-        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation drawer"
-          aria-expanded="false" aria-controls="mobile-nav-panel">
-          <span class="bar bar-1"></span>
-          <span class="bar bar-2"></span>
-        </button>
-      </div>
-
-    </div>
-  </header>
-
-  <!-- Mobile Navigation Panel -->
-  <div class="mobile-nav-panel" id="mobile-nav-panel" aria-hidden="true">
-    <div class="mobile-nav-inner">
-      <div class="mobile-nav-header">
-        <span class="mobile-nav-tag">NAVIGATION // 2026</span>
-        <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close menu">&times;</button>
-      </div>
-      <ul class="mobile-nav-list">
-        <li><a href="#hero" class="mobile-nav-link"><span class="num">00</span>Home</a></li>
-        <li><a href="#about" class="mobile-nav-link"><span class="num">01</span>About &amp; Overview</a></li>
-        <li><a href="#projects" class="mobile-nav-link"><span class="num">02</span>Projects &amp; Works</a></li>
-        <li><a href="#skills" class="mobile-nav-link"><span class="num">03</span>Skills &amp; Tech</a></li>
-        <li><a href="#education" class="mobile-nav-link"><span class="num">04</span>Education Ledger</a></li>
-        <li><a href="#activities" class="mobile-nav-link"><span class="num">05</span>Hackathons &amp; Activities</a></li>
-        <li><a href="#contact" class="mobile-nav-link"><span class="num">06</span>Direct Contact</a></li>
-      </ul>
-      <div class="mobile-nav-footer">
-        <a href="resume.pdf" class="btn-mobile-download" download>Download Resume (PDF) ↗</a>
-        <div class="mobile-contact-line">
-          <a href="mailto:maheshbasarakod05@gmail.com">maheshbasarakod05@gmail.com</a>
-        </div>
-      </div>
-    </div>
+  <!-- Ambient Glowing Background & Interactive Matrix -->
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+    <div class="grid-overlay"></div>
+    <div class="noise-overlay"></div>
+    <!-- Flowing Spline Curves -->
+    <svg class="spline-svg" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="splineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="hsl(199, 89%, 48%)" stop-opacity="0" />
+          <stop offset="50%" stop-color="hsl(199, 89%, 48%)" stop-opacity="0.8" />
+          <stop offset="100%" stop-color="hsl(160, 84%, 39%)" stop-opacity="0" />
+        </linearGradient>
+      </defs>
+      <path d="M-100,380 Q400,280 650,480 T1300,380 T1900,480" stroke="url(#splineGradient)" stroke-width="1.2"
+        fill="none" class="animate-spline-1" />
+      <path d="M-100,520 Q320,400 520,600 T1150,480 T1750,580" stroke="url(#splineGradient)" stroke-width="0.8"
+        fill="none" class="animate-spline-2" />
+    </svg>
   </div>
 
+  <!-- ==========================================================================
+       MOBILE TOP HEADER (Visible on screens < 1024px)
+  ========================================================================== -->
+  <header class="mobile-header" id="mobile-header">
+    <div class="mobile-header-inner">
+      <div class="mobile-brand">
+        <picture class="mobile-avatar-wrap">
+          <source srcset="assets/images/profile.webp" type="image/webp">
+          <img src="assets/images/profile.jpg" alt="Mahesh Basarkhoda" class="mobile-avatar" width="40" height="40">
+        </picture>
+        <div class="mobile-brand-meta">
+          <span class="mobile-brand-name">Mahesh Basarkhoda</span>
+          <span class="mobile-brand-role">CSE (Data Science)</span>
+        </div>
+      </div>
+
+      <button type="button" class="mobile-hamburger-btn" id="mobile-menu-toggle" aria-label="Toggle navigation drawer"
+        aria-expanded="false" aria-controls="mobile-nav-panel">
+        <span class="bar bar-1"></span>
+        <span class="bar bar-2"></span>
+        <span class="bar bar-3"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <nav class="mobile-nav-panel" id="mobile-nav-panel" aria-hidden="true">
+      <div class="mobile-nav-list">
+        <a href="#about" class="mobile-nav-item active"><span class="nav-idx">// 01</span> About Me</a>
+        <a href="#skills" class="mobile-nav-item"><span class="nav-idx">// 02</span> Skills Orbit</a>
+        <a href="#projects" class="mobile-nav-item"><span class="nav-idx">// 03</span> Project Hub</a>
+        <a href="#activities" class="mobile-nav-item"><span class="nav-idx">// 04</span> Hackathons &amp; Activities</a>
+        <a href="#contact" class="mobile-nav-item"><span class="nav-idx">// 05</span> Connect</a>
+      </div>
+      <div class="mobile-drawer-footer">
+        <a href="#contact" class="btn-drawer-cta">Initiate Connect ↗</a>
+        <div class="mobile-drawer-socials">
+          <a href="https://github.com/maheshgouda05" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/mahesh-gouda-3745a0323/" target="_blank" rel="noopener noreferrer"
+            aria-label="LinkedIn">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+            </svg>
+          </a>
+          <a href="mailto:maheshbasarakod05@gmail.com" aria-label="Email">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect width="20" height="16" x="2" y="4" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
+          </a>
+          <a href="https://wa.me/919964073064" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.78 14.07c-.24.68-1.39 1.3-1.92 1.38-.49.08-1.12.11-3.62-.91-3.19-1.31-5.23-4.57-5.39-4.78-.16-.21-1.3-1.73-1.3-3.3 0-1.57.82-2.34 1.11-2.66.29-.32.64-.4.85-.4.21 0 .43.01.62.01.2 0 .47-.08.73.56.27.67.92 2.27 1 2.43.08.17.13.36.03.57-.1.21-.16.34-.31.52-.16.18-.34.4-.48.54-.16.16-.33.33-.14.65.19.32.84 1.38 1.8 2.24 1.24 1.1 2.28 1.44 2.61 1.6.32.16.51.13.7-.08.19-.21.82-.96 1.04-1.28.22-.32.44-.27.73-.16.29.11 1.86.88 2.18 1.04.32.16.54.24.62.38.08.14.08.82-.16 1.5z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
 
   <!-- ==========================================================================
-       MAIN CONTENT
+       LEFT FIXED PROFILE SIDEBAR (Visible on screens >= 1024px)
   ========================================================================== -->
-  <main id="main-content">
+  <aside class="desktop-sidebar" id="desktop-sidebar" aria-label="Profile Sidebar">
+    <div class="sidebar-top-bar">
+      <!-- Monogram Gradient Badge -->
+      <div class="brand-monogram-box">
+        <span class="monogram-text">MB</span>
+      </div>
+
+      <!-- Live Project Availability Pill -->
+      <div class="status-pill" title="Open for roles and internships">
+        <span class="pulse-emerald"></span>
+        <span class="status-text font-mono">Available for projects</span>
+      </div>
+    </div>
+
+    <!-- Profile Image Card with Futuristic Glow Frame -->
+    <div class="profile-card-container">
+      <div class="profile-frame">
+        <picture>
+          <source srcset="assets/images/profile.webp" type="image/webp">
+          <img src="assets/images/profile.jpg" alt="Mahesh Basarkhoda" class="profile-img" width="192" height="224"
+            loading="eager">
+        </picture>
+      </div>
+      <div class="profile-badge-pill">
+        <span class="badge-tag font-mono">CSE • DATA SCIENCE</span>
+      </div>
+    </div>
+
+    <!-- Identity & Roles -->
+    <div class="sidebar-identity">
+      <h2 class="sidebar-name">Mahesh Basarkhoda</h2>
+      <p class="sidebar-subtitle">Backend Developer • Data Science</p>
+      <p class="sidebar-institution font-mono">MVJ College of Engineering, Bengaluru</p>
+    </div>
+
+    <!-- Key Metadata Rows -->
+    <div class="sidebar-meta-list">
+      <a href="mailto:maheshbasarakod05@gmail.com" class="meta-row meta-link group" title="Send email">
+        <div class="meta-icon-box bg-primary-10 text-primary">
+          <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect width="20" height="16" x="2" y="4" rx="2" />
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+          </svg>
+        </div>
+        <span class="meta-val group-hover:underline">maheshbasarakod05@gmail.com</span>
+      </a>
+
+      <div class="meta-row">
+        <div class="meta-icon-box bg-secondary-10 text-secondary">
+          <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+        </div>
+        <span class="meta-val">Bengaluru, India</span>
+      </div>
+    </div>
+
+    <!-- Social Icon Channels -->
+    <div class="sidebar-socials">
+      <a href="https://www.linkedin.com/in/mahesh-gouda-3745a0323/" target="_blank" rel="noopener noreferrer"
+        class="social-circle" title="LinkedIn Profile" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+        </svg>
+      </a>
+
+      <a href="https://github.com/maheshgouda05" target="_blank" rel="noopener noreferrer" class="social-circle"
+        title="GitHub Profile" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+        </svg>
+      </a>
+
+      <a href="https://wa.me/919964073064" target="_blank" rel="noopener noreferrer" class="social-circle"
+        title="WhatsApp Direct" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.78 14.07c-.24.68-1.39 1.3-1.92 1.38-.49.08-1.12.11-3.62-.91-3.19-1.31-5.23-4.57-5.39-4.78-.16-.21-1.3-1.73-1.3-3.3 0-1.57.82-2.34 1.11-2.66.29-.32.64-.4.85-.4.21 0 .43.01.62.01.2 0 .47-.08.73.56.27.67.92 2.27 1 2.43.08.17.13.36.03.57-.1.21-.16.34-.31.52-.16.18-.34.4-.48.54-.16.16-.33.33-.14.65.19.32.84 1.38 1.8 2.24 1.24 1.1 2.28 1.44 2.61 1.6.32.16.51.13.7-.08.19-.21.82-.96 1.04-1.28.22-.32.44-.27.73-.16.29.11 1.86.88 2.18 1.04.32.16.54.24.62.38.08.14.08.82-.16 1.5z" />
+        </svg>
+      </a>
+    </div>
+
+    <!-- Bottom Action CTA -->
+    <a href="#contact" class="sidebar-cta-btn group">
+      <span class="cta-label">Initiate Connect</span>
+      <div class="cta-arrow-box group-hover:scale-110">
+        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M5 12h14" />
+          <path d="m12 5 7 7-7 7" />
+        </svg>
+      </div>
+    </a>
+  </aside>
+
+  <!-- ==========================================================================
+       RIGHT FLOATING NAVIGATION DOCK (Visible on screens >= 1024px)
+  ========================================================================== -->
+  <nav class="floating-dock hidden lg:block" id="floating-dock" aria-label="Section Quick Navigation">
+    <div class="dock-inner">
+      <!-- About (First Navigation Item) -->
+      <a href="#about" class="dock-link active" data-section="about" aria-label="About Section">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 16v-4" />
+          <path d="M12 8h.01" />
+        </svg>
+        <span class="dock-tooltip">About Me</span>
+      </a>
+
+      <!-- Skills -->
+      <a href="#skills" class="dock-link" data-section="skills" aria-label="Skills Section">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2v20" />
+          <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+        </svg>
+        <span class="dock-tooltip">Skills Orbit</span>
+      </a>
+
+      <!-- Projects -->
+      <a href="#projects" class="dock-link" data-section="projects" aria-label="Projects Section">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="m16 16 1.5-1.5" />
+          <path d="m8 8 1.5 1.5" />
+          <rect width="20" height="14" x="2" y="5" rx="2" />
+        </svg>
+        <span class="dock-tooltip">Project Hub</span>
+      </a>
+
+      <!-- Activities & Hackathons -->
+      <a href="#activities" class="dock-link" data-section="activities" aria-label="Activities Section">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+          <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+          <path d="M4 22h16" />
+          <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+          <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+          <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+        </svg>
+        <span class="dock-tooltip">Activities</span>
+      </a>
+
+      <!-- Contact -->
+      <a href="#contact" class="dock-link" data-section="contact" aria-label="Contact Section">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 2 11 13" />
+          <path d="m22 2-7 20-4-9-9-4 20-7z" />
+        </svg>
+        <span class="dock-tooltip">Connect</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       MAIN VIEWPORT CONTAINER (lg:ml-96 lg:mr-24)
+  ========================================================================== -->
+  <main class="main-content" id="main-content">
+
+    <!-- Anchor fallback for any legacy or external links referencing #hero -->
+    <div id="hero" style="position: absolute; top: 0; left: 0; width: 0; height: 0; pointer-events: none;"></div>
 
     <!-- ==========================================================================
-         HERO / EDITORIAL FRONT-PAGE
+         [01] ABOUT ME / PROFILE SECTION (Default First Section)
     ========================================================================== -->
-    <section id="hero" class="hero-section">
-      <div class="section-container">
+    <section id="about" class="content-section about-hero-section">
+      <!-- Status Clock Bar -->
+      <div class="hero-status-row">
+        <span class="status-city font-mono">Bangalore, India • <span id="live-time">16:00:00</span></span>
+      </div>
 
-        <!-- Top Editorial Masthead Bar -->
-        <div class="hero-masthead">
-          <div class="masthead-left">
-            <span class="editorial-issue">VOL. 01 — EDITION 2026</span>
-            <span class="masthead-sep">/</span>
-            <span class="masthead-loc">WHITEFIELD, BENGALURU, KARNATAKA, INDIA</span>
-          </div>
-          <div class="masthead-right">
-            <span class="badge-status-pill">AVAILABLE FOR OPPORTUNITIES</span>
-          </div>
-        </div>
+      <!-- Tagline Pill -->
+      <div class="section-tag-row">
+        <svg class="icon-sm icon-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 16v-4" />
+          <path d="M12 8h.01" />
+        </svg>
+        <span class="tag-label font-mono">ABOUT ME &amp; PROFILE</span>
+      </div>
 
-        <!-- Main Asymmetrical Hero Grid -->
-        <div class="hero-grid">
+      <!-- Main Headline with Cyberpunk Gradient -->
+      <h1 class="hero-headline">
+        <span class="headline-light">Architecting Quality</span>
+        <br>
+        <span class="headline-gradient">Through Data &amp; Code</span>
+      </h1>
 
-          <!-- Left Column: Big Typographic Statement -->
-          <div class="hero-primary-col">
-            <div class="hero-intro-label">
-              <span class="orange-dash">—</span>
-              <span>DATA SCIENCE STUDENT | BACKEND DEVELOPER | ML &amp; DATA VISUALIZATION</span>
-            </div>
+      <!-- Dynamic Role Highlight -->
+      <div class="role-typewriter-wrap font-mono">
+        <span class="typewriter-prefix">&gt;</span>
+        <span class="typewriter-text" id="role-typewriter">Data Science &amp; Machine Learning</span>
+        <span class="typewriter-cursor">|</span>
+      </div>
 
-            <!-- Bold Editorial Headline -->
-            <h1 class="hero-display-headline">
-              Hi, I'm <span class="highlight-word">Mahesh Basarkhoda</span>.
-            </h1>
+      <!-- Hero Lead Paragraph -->
+      <p class="hero-bio-lead">
+        Third-year Computer Science Engineering student specializing in <strong class="text-primary">Data Science</strong> at
+        <strong class="text-foreground">MVJ College of Engineering, Bengaluru</strong>. Building the bridge between
+        <span class="text-primary font-medium">high-performance backend systems</span> and
+        <span class="text-secondary font-medium">autonomous data intelligence</span>.
+      </p>
 
-            <!-- Dynamic Role Typewriter Ribbon -->
-            <div class="hero-role-bar">
-              <span class="role-fixed-text">SPECIALIZING IN // </span>
-              <span class="role-dynamic-text" id="role-dynamic-text">Data Science &amp; Machine Learning</span>
-              <span class="role-caret"></span>
-            </div>
+      <!-- Focus Tech Pills -->
+      <div class="hero-pills-wrap">
+        <span class="tech-chip">Data Science</span>
+        <span class="tech-chip">Machine Learning</span>
+        <span class="tech-chip">FastAPI &amp; Node.js</span>
+        <span class="tech-chip">Computer Vision (OpenCV)</span>
+        <span class="tech-chip">MongoDB &amp; Firebase</span>
+        <span class="tech-chip">Predictive Analytics</span>
+      </div>
 
-            <!-- Narrative Bio Paragraph -->
-            <p class="hero-bio-narrative">
-              I'm a Computer Science Engineering student specializing in Data Science, with a strong interest in machine learning, data visualization, backend development, and building practical software solutions.
-            </p>
-
-            <!-- Action Triggers: Two Hero Buttons -->
-            <div class="hero-cta-group">
-              <a href="#projects" class="btn-hero-primary">
-                <span>Explore My Projects</span>
-                <span class="btn-circle-arrow">↓</span>
-              </a>
-              <a href="#contact" class="btn-hero-secondary">
-                <span>Contact Me</span>
-                <span class="btn-icon">→</span>
-              </a>
-            </div>
-
-            <!-- Sports-Inspired Personality Note -->
-            <div class="hero-sports-note">
-              <span class="hero-sports-tag">✦ Sports &amp; Drive</span>
-              <span>Bringing the same discipline, endurance, and team strategy from the sports field to building scalable backend systems, training ML models, and solving real-world challenges.</span>
-            </div>
-
-            <!-- Quick Communication Handles Strip -->
-            <div class="hero-meta-strip">
-              <div class="meta-strip-item">
-                <span class="meta-strip-label">OFFICIAL EMAIL:</span>
-                <a href="mailto:maheshbasarakod05@gmail.com" class="meta-strip-link">maheshbasarakod05@gmail.com</a>
-              </div>
-              <div class="meta-strip-item">
-                <span class="meta-strip-label">PHONE:</span>
-                <a href="tel:9964073064" class="meta-strip-link">+91 9964073064</a>
-              </div>
-              <div class="meta-strip-item">
-                <span class="meta-strip-label">GITHUB:</span>
-                <a href="https://github.com/maheshgouda05" target="_blank" rel="noopener noreferrer"
-                  class="meta-strip-link">github.com/maheshgouda05 ↗</a>
-              </div>
-              <div class="meta-strip-item">
-                <span class="meta-strip-label">LINKEDIN:</span>
-                <a href="https://www.linkedin.com/in/mahesh-gouda-3745a0323/" target="_blank" rel="noopener noreferrer"
-                  class="meta-strip-link">linkedin.com/in/mahesh-gouda ↗</a>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Right Column: Editorial Profile & Specimen Card -->
-          <div class="hero-aside-col">
-            <aside class="editorial-profile-card">
-
-              <!-- Card Header -->
-              <div class="profile-card-top">
-                <div class="profile-stamp">
-                  <span class="stamp-code">STUDENT // B.TECH-DS</span>
-                  <span class="stamp-verified">VERIFIED PROFILE ✓</span>
-                </div>
-                <div class="profile-status-flag">ACTIVE</div>
-              </div>
-
-              <!-- Profile Avatar & Identity -->
-              <div class="profile-card-identity">
-                <div class="profile-avatar-frame">
-                  <img src="assets/images/profile.jpg" alt="Mahesh Basarkhoda" class="profile-avatar-img"
-                    width="72" height="72" loading="eager" decoding="async"
-                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                  <div class="profile-avatar-fallback">MB</div>
-                </div>
-                <div class="profile-text-group">
-                  <h2 class="profile-name">Mahesh Basarkhoda</h2>
-                  <span class="profile-role-tag">Data Science &amp; Backend</span>
-                  <span class="profile-institution">MVJ College of Engineering, Bengaluru</span>
-                </div>
-              </div>
-
-              <!-- Editorial Key Facts Ledger -->
-              <div class="profile-ledger">
-                <div class="ledger-row">
-                  <span class="ledger-key">Course</span>
-                  <span class="ledger-val">CSE — Data Science</span>
-                </div>
-                <div class="ledger-row">
-                  <span class="ledger-key">Current Year</span>
-                  <span class="ledger-val">Third Year (2024 — 2028)</span>
-                </div>
-                <div class="ledger-row">
-                  <span class="ledger-key">Location</span>
-                  <span class="ledger-val">Whitefield, Bengaluru, India</span>
-                </div>
-                <div class="ledger-row">
-                  <span class="ledger-key">Core Stack</span>
-                  <span class="ledger-val highlight-orange">Python • FastAPI • MongoDB • ML</span>
-                </div>
-              </div>
-
-              <!-- Quick Stats Ticker Strip -->
-              <div class="profile-quick-stats">
-                <div class="quick-stat">
-                  <span class="stat-number">05</span>
-                  <span class="stat-desc">Projects in Dev</span>
-                </div>
-                <div class="quick-stat-sep"></div>
-                <div class="quick-stat">
-                  <span class="stat-number">03</span>
-                  <span class="stat-desc">Hackathons</span>
-                </div>
-                <div class="quick-stat-sep"></div>
-                <div class="quick-stat">
-                  <span class="stat-number">DS &amp; ML</span>
-                  <span class="stat-desc">Specialization</span>
-                </div>
-              </div>
-
-              <!-- Card Bottom Action Link -->
-              <div class="profile-card-footer">
-                <a href="#about" class="profile-explore-link">
-                  <span>Detailed Profile Breakdown</span>
-                  <span>→</span>
-                </a>
-              </div>
-
-            </aside>
-          </div>
-
-        </div>
-
+      <!-- Action Buttons -->
+      <div class="hero-actions-row">
+        <a href="#projects" class="btn-primary">
+          <span>Explore Projects</span>
+          <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+          </svg>
+        </a>
+        <a href="#contact" class="btn-outline">
+          <span>Get In Touch</span>
+        </a>
       </div>
     </section>
 
-
     <!-- ==========================================================================
-         EDITORIAL MARQUEE / TICKER TAPE
+         [02] SKILLS SECTION — INTELLIGENCE ORBIT
     ========================================================================== -->
-    <section class="ticker-tape-section" aria-label="Highlights Marquee">
-      <div class="ticker-tape-wrapper">
-        <div class="ticker-tape-track">
-          <div class="ticker-tape-content">
-            <span class="ticker-item"><span class="ticker-bullet">✦</span> COMPUTER SCIENCE ENGINEERING — DATA SCIENCE</span>
-            <span class="ticker-item"><span class="ticker-bullet">✦</span> BACKEND DEVELOPMENT &amp; REST APIS</span>
-            <span class="ticker-item"><span class="ticker-bullet">✦</span> MACHINE LEARNING &amp; DATA VISUALIZATION</span>
-            <span class="ticker-item"><span class="ticker-bullet">✦</span> OPENCV &amp; COMPUTER VISION</span>
-            <span class="ticker-item"><span class="ticker-bullet">✦</span> WHITEFIELD, BENGALURU, KARNATAKA, INDIA</span>
-            <span class="ticker-item"><span class="ticker-bullet">✦</span> SPORTS &amp; TEAM COLLABORATION</span>
-            <!-- Duplicate loop for smooth ticker -->
-            <span class="ticker-item"><span class="ticker-bullet">✦</span> COMPUTER SCIENCE ENGINEERING — DATA SCIENCE</span>
-            <span class="ticker-item"><span class="ticker-bullet">✦</span> BACKEND DEVELOPMENT &amp; REST APIS</span>
-            <span class="ticker-item"><span class="ticker-bullet">✦</span> MACHINE LEARNING &amp; DATA VISUALIZATION</span>
-            <span class="ticker-item"><span class="ticker-bullet">✦</span> OPENCV &amp; COMPUTER VISION</span>
-            <span class="ticker-item"><span class="ticker-bullet">✦</span> WHITEFIELD, BENGALURU, KARNATAKA, INDIA</span>
-            <span class="ticker-item"><span class="ticker-bullet">✦</span> SPORTS &amp; TEAM COLLABORATION</span>
+    <section id="skills" class="content-section">
+      <div class="section-tag-row">
+        <svg class="icon-sm icon-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3" />
+          <path
+            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+        </svg>
+        <span class="tag-label font-mono">EXPERTISE</span>
+      </div>
+
+      <h2 class="section-heading">
+        <span class="hash-accent">//</span> Intelligence Orbit
+      </h2>
+      <p class="section-subtext">
+        A comprehensive technical toolkit spanning data science, machine learning, backend engineering, and databases.
+      </p>
+
+      <div class="skills-grid">
+        <!-- Card 1: Data Science & ML -->
+        <div class="glass-card skill-card group">
+          <div class="skill-card-hover-glow secondary"></div>
+          <div class="skill-card-header">
+            <div class="skill-icon-wrap bg-secondary-10 text-secondary border-secondary-20">
+              <svg class="icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                <line x1="12" y1="22.08" x2="12" y2="12" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="skill-card-title">Data Science &amp; ML</h3>
+              <span class="skill-card-sub font-mono">Algorithms &amp; Analytics</span>
+            </div>
+          </div>
+          <div class="skills-chips-flow">
+            <span class="orbit-chip secondary">NumPy</span>
+            <span class="orbit-chip secondary">Pandas</span>
+            <span class="orbit-chip secondary">Scikit-learn</span>
+            <span class="orbit-chip secondary">Data Analysis</span>
+            <span class="orbit-chip secondary">Data Visualization</span>
+            <span class="orbit-chip secondary">Predictive Modeling</span>
+            <span class="orbit-chip secondary">Weather Analytics</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Backend Development -->
+        <div class="glass-card skill-card group">
+          <div class="skill-card-hover-glow primary"></div>
+          <div class="skill-card-header">
+            <div class="skill-icon-wrap bg-primary-10 text-primary border-primary-20">
+              <svg class="icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect width="18" height="18" x="3" y="3" rx="2" />
+                <path d="m9 8 3 3-3 3" />
+                <line x1="15" y1="16" x2="15.01" y2="16" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="skill-card-title">Backend Architecture</h3>
+              <span class="skill-card-sub font-mono">APIs &amp; Microservices</span>
+            </div>
+          </div>
+          <div class="skills-chips-flow">
+            <span class="orbit-chip primary">FastAPI</span>
+            <span class="orbit-chip primary">Flask</span>
+            <span class="orbit-chip primary">Node.js</span>
+            <span class="orbit-chip primary">Express.js</span>
+            <span class="orbit-chip primary">RESTful APIs</span>
+            <span class="orbit-chip primary">Routing &amp; Middleware</span>
+            <span class="orbit-chip primary">Server Logic</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Computer Vision & AI -->
+        <div class="glass-card skill-card group">
+          <div class="skill-card-hover-glow primary"></div>
+          <div class="skill-card-header">
+            <div class="skill-icon-wrap bg-primary-10 text-primary border-primary-20">
+              <svg class="icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="skill-card-title">Computer Vision &amp; AI</h3>
+              <span class="skill-card-sub font-mono">Visual Intelligence</span>
+            </div>
+          </div>
+          <div class="skills-chips-flow">
+            <span class="orbit-chip primary">OpenCV</span>
+            <span class="orbit-chip primary">Image Processing</span>
+            <span class="orbit-chip primary">Friday-AI Workflows</span>
+            <span class="orbit-chip primary">Feature Extraction</span>
+            <span class="orbit-chip primary">Object Tracking</span>
+            <span class="orbit-chip primary">Agentic Automation</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Databases & Persistence -->
+        <div class="glass-card skill-card group">
+          <div class="skill-card-hover-glow secondary"></div>
+          <div class="skill-card-header">
+            <div class="skill-icon-wrap bg-secondary-10 text-secondary border-secondary-20">
+              <svg class="icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <ellipse cx="12" cy="5" rx="9" ry="3" />
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="skill-card-title">Databases &amp; Storage</h3>
+              <span class="skill-card-sub font-mono">Cloud &amp; Relational</span>
+            </div>
+          </div>
+          <div class="skills-chips-flow">
+            <span class="orbit-chip secondary">MongoDB</span>
+            <span class="orbit-chip secondary">Firebase</span>
+            <span class="orbit-chip secondary">Supabase</span>
+            <span class="orbit-chip secondary">SQL</span>
+            <span class="orbit-chip secondary">Database Design</span>
+            <span class="orbit-chip secondary">Data Persistence</span>
+          </div>
+        </div>
+
+        <!-- Card 5: Development Environments & Tools -->
+        <div class="glass-card skill-card group">
+          <div class="skill-card-hover-glow primary"></div>
+          <div class="skill-card-header">
+            <div class="skill-icon-wrap bg-primary-10 text-primary border-primary-20">
+              <svg class="icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m18 16 4-4-4-4" />
+                <path d="m6 8-4 4 4 4" />
+                <path d="m14.5 4-5 16" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="skill-card-title">Development Environments</h3>
+              <span class="skill-card-sub font-mono">IDEs &amp; Tooling</span>
+            </div>
+          </div>
+          <div class="skills-chips-flow">
+            <span class="orbit-chip primary">Visual Studio Code</span>
+            <span class="orbit-chip primary">Google Antigravity</span>
+            <span class="orbit-chip primary">Android Studio</span>
+            <span class="orbit-chip primary">Xcode</span>
+            <span class="orbit-chip primary">Git &amp; GitHub</span>
+            <span class="orbit-chip primary">Postman</span>
+          </div>
+        </div>
+
+        <!-- Card 6: Programming Languages & Fundamentals -->
+        <div class="glass-card skill-card group">
+          <div class="skill-card-hover-glow secondary"></div>
+          <div class="skill-card-header">
+            <div class="skill-icon-wrap bg-secondary-10 text-secondary border-secondary-20">
+              <svg class="icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="skill-card-title">Languages &amp; Core CS</h3>
+              <span class="skill-card-sub font-mono">Foundations</span>
+            </div>
+          </div>
+          <div class="skills-chips-flow">
+            <span class="orbit-chip secondary">Python (Proficient)</span>
+            <span class="orbit-chip secondary">Java</span>
+            <span class="orbit-chip secondary">C / C++</span>
+            <span class="orbit-chip secondary">Data Structures</span>
+            <span class="orbit-chip secondary">Algorithms</span>
+            <span class="orbit-chip secondary">Object-Oriented Design</span>
           </div>
         </div>
       </div>
     </section>
 
-
     <!-- ==========================================================================
-         [ABOUT ME — EDITORIAL ESSAY & BLUEPRINT]
+         [03] PROJECTS SECTION — PROJECT HUB
     ========================================================================== -->
-    <section id="about" class="section-block about-section">
-      <div class="section-container">
+    <section id="projects" class="content-section">
+      <div class="section-tag-row">
+        <svg class="icon-sm icon-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="m16 16 1.5-1.5" />
+          <path d="m8 8 1.5 1.5" />
+          <rect width="20" height="14" x="2" y="5" rx="2" />
+        </svg>
+        <span class="tag-label font-mono">PORTFOLIO</span>
+      </div>
 
-        <!-- Section Header -->
-        <header class="editorial-section-header">
-          <div class="section-tag-group">
-            <span class="section-index-num">01/</span>
-            <span class="section-tag-name">BIOGRAPHY &amp; FOUNDATIONS</span>
+      <h2 class="section-heading">
+        <span class="hash-accent">//</span> Project Hub
+      </h2>
+      <p class="section-subtext">
+        A curated selection of 6 projects showcasing expertise across machine learning, computer vision, backend engineering, and practical problem-solving.
+      </p>
+
+      <!-- Category Filter Tabs -->
+      <div class="project-filter-bar">
+        <button type="button" class="filter-tab active" data-filter="all">All Projects (6)</button>
+        <button type="button" class="filter-tab" data-filter="ai-ml">AI &amp; Machine Learning</button>
+        <button type="button" class="filter-tab" data-filter="vision">Computer Vision</button>
+        <button type="button" class="filter-tab" data-filter="web-systems">Web &amp; Systems</button>
+      </div>
+
+      <!-- Project Cards Grid -->
+      <div class="projects-grid" id="projects-grid">
+
+        <!-- PROJECT 01: Collection — Personal Inventory & Smart Shopping Assistant -->
+        <article class="glass-card project-card group" data-category="web-systems ai-ml">
+          <div class="project-card-header">
+            <div class="project-meta-line font-mono">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+              </svg>
+              <span>INVENTORY &amp; SHOPPING</span>
+              <span class="meta-dot">•</span>
+              <span class="project-id">#01</span>
+            </div>
+            <span class="featured-badge font-mono">
+              <svg class="icon-xs fill-current" viewBox="0 0 24 24">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+              Featured
+            </span>
           </div>
-          <h2 class="section-title">
-            Passionate about engineering, driven by <span class="italic-serif">practical</span> execution.
-          </h2>
-          <p class="section-dek">
-            A look into my academic journey, backend craftsmanship, data science interests, and collaborative learning.
+
+          <h3 class="project-title group-hover:text-primary transition-colors">
+            Collection — Personal Inventory &amp; Smart Shopping Assistant
+          </h3>
+
+          <p class="project-desc">
+            Helps users organize and track belongings across different categories, identify missing items while shopping, receive purchase reminders, and get suggestions based on their existing inventory.
           </p>
-        </header>
 
-        <!-- Asymmetrical 2-Column Storytelling Grid -->
-        <div class="about-editorial-grid">
+          <div class="project-tech-row">
+            <span class="tech-tag">Next.js</span>
+            <span class="tech-tag">JavaScript / TypeScript</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Express.js</span>
+            <span class="tech-tag">Database Integration</span>
+          </div>
 
-          <!-- Left Column: Personal Narrative & Manifesto -->
-          <div class="about-narrative-col">
-            <div class="editorial-quote-card">
-              <span class="quote-mark">“</span>
-              <p class="quote-body">
-                I enjoy developing backend systems, designing databases, and translating data into intuitive software solutions that solve real-world problems.
+          <div class="project-highlights">
+            <span class="highlight-bullet text-secondary">• Category-wise inventory tracking</span>
+            <span class="highlight-bullet text-secondary">• Missing item shopping detection</span>
+            <span class="highlight-bullet text-secondary">• Smart purchase reminders</span>
+          </div>
+
+          <div class="project-actions">
+            <a href="https://github.com/maheshgouda05/collection" target="_blank" rel="noopener noreferrer"
+              class="project-github-btn" title="View Collection on GitHub">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+              <span>GitHub Repository</span>
+              <span class="btn-arr">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- PROJECT 02: Friday-AI -->
+        <article class="glass-card project-card group" data-category="ai-ml">
+          <div class="project-card-header">
+            <div class="project-meta-line font-mono">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+              </svg>
+              <span>ARTIFICIAL INTELLIGENCE</span>
+              <span class="meta-dot">•</span>
+              <span class="project-id">#02</span>
+            </div>
+            <span class="featured-badge font-mono">
+              <svg class="icon-xs fill-current" viewBox="0 0 24 24">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+              Featured
+            </span>
+          </div>
+
+          <h3 class="project-title group-hover:text-primary transition-colors">
+            Friday-AI
+          </h3>
+
+          <p class="project-desc">
+            A personal AI assistant project focused on intelligent conversational workflows, automated task assistance, and natural system interactions.
+          </p>
+
+          <div class="project-tech-row">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Machine Learning</span>
+            <span class="tech-tag">AI Workflows</span>
+            <span class="tech-tag">Automation</span>
+          </div>
+
+          <div class="project-highlights">
+            <span class="highlight-bullet text-secondary">• Agentic workflow experimentation</span>
+            <span class="highlight-bullet text-secondary">• Personal assistant architecture</span>
+            <span class="highlight-bullet text-secondary">• Interactive desktop/CLI integration</span>
+          </div>
+
+          <div class="project-actions">
+            <a href="https://github.com/maheshgouda05/friday_ai_tool" target="_blank" rel="noopener noreferrer"
+              class="project-github-btn" title="View Friday-AI on GitHub">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+              <span>GitHub Repository</span>
+              <span class="btn-arr">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- PROJECT 03: OpenCV — Computer Vision -->
+        <article class="glass-card project-card group" data-category="vision ai-ml">
+          <div class="project-card-header">
+            <div class="project-meta-line font-mono">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+              </svg>
+              <span>COMPUTER VISION</span>
+              <span class="meta-dot">•</span>
+              <span class="project-id">#03</span>
+            </div>
+          </div>
+
+          <h3 class="project-title group-hover:text-primary transition-colors">
+            OpenCV — Computer Vision
+          </h3>
+
+          <p class="project-desc">
+            Computer-vision capabilities that contribute directly to the Friday-AI and Collection projects, exploring practical image transformations, object detection, and visual recognition.
+          </p>
+
+          <div class="project-tech-row">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">OpenCV</span>
+            <span class="tech-tag">NumPy</span>
+            <span class="tech-tag">Image Processing</span>
+            <span class="tech-tag">Feature Detection</span>
+          </div>
+
+          <div class="project-highlights">
+            <span class="highlight-bullet text-secondary">• Image transformation &amp; filtering</span>
+            <span class="highlight-bullet text-secondary">• Visual input processing for Friday-AI</span>
+            <span class="highlight-bullet text-secondary">• Inventory visual recognition modules</span>
+          </div>
+
+          <div class="project-actions">
+            <a href="https://github.com/maheshgouda05/opencv" target="_blank" rel="noopener noreferrer"
+              class="project-github-btn" title="View OpenCV on GitHub">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+              <span>GitHub Repository</span>
+              <span class="btn-arr">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- PROJECT 04: Smart Mobility System -->
+        <article class="glass-card project-card group" data-category="web-systems ai-ml">
+          <div class="project-card-header">
+            <div class="project-meta-line font-mono">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+              </svg>
+              <span>INTELLIGENT SYSTEMS</span>
+              <span class="meta-dot">•</span>
+              <span class="project-id">#04</span>
+            </div>
+          </div>
+
+          <h3 class="project-title group-hover:text-primary transition-colors">
+            Smart Mobility System
+          </h3>
+
+          <p class="project-desc">
+            A technology-driven project focused on improving urban mobility and transportation, exploring traffic data analytics, route optimization, and smart commuter solutions.
+          </p>
+
+          <div class="project-tech-row">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Data Analytics</span>
+            <span class="tech-tag">Mobility Algorithms</span>
+            <span class="tech-tag">Systems Engineering</span>
+          </div>
+
+          <div class="project-highlights">
+            <span class="highlight-bullet text-secondary">• Transportation optimization patterns</span>
+            <span class="highlight-bullet text-secondary">• Urban transit data flow modeling</span>
+            <span class="highlight-bullet text-secondary">• Commute efficiency algorithms</span>
+          </div>
+
+          <div class="project-actions">
+            <a href="https://github.com/maheshgouda05" target="_blank" rel="noopener noreferrer"
+              class="project-github-btn" title="View Smart Mobility on GitHub">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+              <span>GitHub Profile</span>
+              <span class="btn-arr">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- PROJECT 05: Hyperlocal Monsoon Onset & Break Prediction System -->
+        <article class="glass-card project-card group" data-category="ai-ml">
+          <div class="project-card-header">
+            <div class="project-meta-line font-mono">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+              </svg>
+              <span>SIH WEATHER ANALYTICS</span>
+              <span class="meta-dot">•</span>
+              <span class="project-id">#05</span>
+            </div>
+          </div>
+
+          <h3 class="project-title group-hover:text-primary transition-colors">
+            Hyperlocal Monsoon Onset &amp; Break Prediction System
+          </h3>
+
+          <p class="project-desc">
+            A project exploring block- and village-level monsoon prediction based on a Smart India Hackathon (SIH) problem statement, analyzing meteorological parameters, rainfall trends, and predictive climate modeling.
+          </p>
+
+          <div class="project-tech-row">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Machine Learning</span>
+            <span class="tech-tag">Data Visualization</span>
+            <span class="tech-tag">Predictive Analytics</span>
+            <span class="tech-tag">Meteorological Data</span>
+          </div>
+
+          <div class="project-highlights">
+            <span class="highlight-bullet text-secondary">• Hyperlocal block &amp; village scale forecasting</span>
+            <span class="highlight-bullet text-secondary">• Monsoon onset &amp; dry-spell break prediction</span>
+            <span class="highlight-bullet text-secondary">• Exploratory climate data modeling</span>
+          </div>
+
+          <div class="project-actions">
+            <a href="https://github.com/maheshgouda05" target="_blank" rel="noopener noreferrer"
+              class="project-github-btn" title="View Project on GitHub">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+              <span>GitHub Profile</span>
+              <span class="btn-arr">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- PROJECT 06: Zewa — Zero Waste -->
+        <article class="glass-card project-card group" data-category="web-systems">
+          <div class="project-card-header">
+            <div class="project-meta-line font-mono">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+              </svg>
+              <span>SUSTAINABILITY &amp; WEB</span>
+              <span class="meta-dot">•</span>
+              <span class="project-id">#06</span>
+            </div>
+          </div>
+
+          <h3 class="project-title group-hover:text-primary transition-colors">
+            Zewa — Zero Waste
+          </h3>
+
+          <p class="project-desc">
+            A food-waste reduction initiative that helps restaurants offer surplus food at discounted prices to customers, promoting environmental sustainability and affordable meal access.
+          </p>
+
+          <div class="project-tech-row">
+            <span class="tech-tag">Full-Stack Web</span>
+            <span class="tech-tag">Surplus Food Listings</span>
+            <span class="tech-tag">Discount Logic (~50% Off)</span>
+            <span class="tech-tag">Zero Waste Initiative</span>
+          </div>
+
+          <div class="project-highlights">
+            <span class="highlight-bullet text-secondary">• Food surplus redistribution network</span>
+            <span class="highlight-bullet text-secondary">• Closing-time restaurant meal listings</span>
+            <span class="highlight-bullet text-secondary">• Affordable consumer access model</span>
+          </div>
+
+          <div class="project-actions">
+            <a href="https://github.com/maheshgouda05" target="_blank" rel="noopener noreferrer"
+              class="project-github-btn" title="View Zewa on GitHub">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+              <span>GitHub Profile</span>
+              <span class="btn-arr">↗</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         [05] HACKATHONS & ACTIVITIES
+    ========================================================================== -->
+    <section id="activities" class="content-section">
+      <div class="section-tag-row">
+        <svg class="icon-sm icon-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+          <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+          <path d="M4 22h16" />
+          <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+          <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+          <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+        </svg>
+        <span class="tag-label font-mono">COLLABORATION &amp; INITIATIVE</span>
+      </div>
+
+      <h2 class="section-heading">
+        <span class="hash-accent">//</span> Hackathons &amp; Activities
+      </h2>
+      <p class="section-subtext">
+        Collegiate hackathons, collaborative technical problem-solving, athletic drive, and learning milestones.
+      </p>
+
+      <div class="activities-split-grid">
+        <!-- Hackathons Column -->
+        <div class="activities-col">
+          <div class="activities-col-head font-mono">
+            <span>HACKATHON PARTICIPATIONS //</span>
+            <span class="text-primary">Competitive Sprints</span>
+          </div>
+
+          <div class="activity-card-stack">
+            <!-- Event 1 -->
+            <div class="glass-card activity-card group">
+              <div class="activity-badge font-mono">01</div>
+              <div class="activity-content">
+                <div class="activity-title-row">
+                  <h3 class="activity-name">TECHFLIX Season 2 — Prompt Wars</h3>
+                  <span class="activity-date font-mono">Bengaluru</span>
+                </div>
+                <span class="activity-venue font-mono text-secondary">Dayananda Sagar University, Bengaluru</span>
+                <p class="activity-desc">
+                  Active participation in the Prompt Wars event, formulating rapid prompt engineering workflows, generative AI pipelines, and competitive technical problem-solving.
+                </p>
+                <div class="activity-meta-tag">
+                  <span class="status-chip secondary">Participation Certificate Received ✓</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Event 2 -->
+            <div class="glass-card activity-card group">
+              <div class="activity-badge font-mono">02</div>
+              <div class="activity-content">
+                <div class="activity-title-row">
+                  <h3 class="activity-name">Pravrutti 2.0 — National Level Techfest</h3>
+                  <span class="activity-date font-mono">Bengaluru</span>
+                </div>
+                <span class="activity-venue font-mono text-secondary">Ramaiah University of Applied Sciences</span>
+                <p class="activity-desc">
+                  Registered for the Hacktivate event, engaging in collaborative software ideation, rapid prototype development, and technical problem-solving under competition constraints.
+                </p>
+                <div class="activity-meta-tag">
+                  <span class="status-chip primary">Registered: Hacktivate Event</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Event 3: Smart India Hackathon initiative -->
+            <div class="glass-card activity-card group">
+              <div class="activity-badge font-mono">03</div>
+              <div class="activity-content">
+                <div class="activity-title-row">
+                  <h3 class="activity-name">Smart India Hackathon (SIH) Initiative</h3>
+                  <span class="activity-date font-mono">National Problem</span>
+                </div>
+                <span class="activity-venue font-mono text-secondary">Hyperlocal Weather Problem Statement</span>
+                <p class="activity-desc">
+                  Collegiate hackathon exploration tackling village-level and block-level monsoon onset forecasting through meteorological data modeling and machine learning algorithms.
+                </p>
+                <div class="activity-meta-tag">
+                  <span class="status-chip primary">Active Research &amp; Prototyping</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Athletics & Continuous Learning Column -->
+        <div class="activities-col">
+          <div class="activities-col-head font-mono">
+            <span>DISCIPLINE &amp; ROADMAP //</span>
+            <span class="text-secondary">Athletics &amp; Growth</span>
+          </div>
+
+          <div class="activity-card-stack">
+            <!-- Sports Card -->
+            <div class="glass-card activity-card group">
+              <div class="activity-badge font-mono">✦</div>
+              <div class="activity-content">
+                <div class="activity-title-row">
+                  <h3 class="activity-name">Sports &amp; Athletic Discipline</h3>
+                  <span class="activity-date font-mono">Active Mindset</span>
+                </div>
+                <span class="activity-venue font-mono text-secondary">Physical Fitness &amp; Strategic Endurance</span>
+                <p class="activity-desc">
+                  Sports is an essential pillar in my life. Playing football, cricket, and athletic sports instills tactical thinking, pressure resilience, and team cohesion that directly strengthens my engineering execution.
+                </p>
+                <div class="interests-pills-row">
+                  <span class="interest-pill text-secondary">⚽ Football &amp; Cricket</span>
+                  <span class="interest-pill">🤖 Machine Learning</span>
+                  <span class="interest-pill">📊 Data Visualization</span>
+                  <span class="interest-pill">⚙️ Backend Systems</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Learning Roadmap -->
+            <div class="glass-card activity-card cert-roadmap-card">
+              <div class="roadmap-icon">📜</div>
+              <h3 class="roadmap-title">Certifications &amp; Accreditations</h3>
+              <p class="roadmap-desc">
+                "Technical learning, course completions, and hackathon recognitions will be updated here as I progress through my engineering journey."
               </p>
-              <span class="quote-author">— Mahesh Basarkhoda</span>
-            </div>
-
-            <!-- Narrative Paragraphs -->
-            <div class="narrative-body-text">
-              <p>
-                I'm a third-year Computer Science Engineering student specializing in Data Science. I enjoy developing backend systems, designing databases, and building web applications that solve real-world problems. My main interests include machine learning, data science, and data visualization.
-              </p>
-              <p>
-                I primarily work on backend development and database integration. I use tools such as VS Code and Antigravity for web development, Android Studio for Android applications, and Xcode for Apple-platform development.
-              </p>
-              <p>
-                Outside technology, I'm passionate about sports. I enjoy learning through practical projects, collaborating with teams, and participating in hackathons.
-              </p>
-            </div>
-
-            <!-- Quick Signature Highlights -->
-            <div class="about-quick-specs">
-              <div class="spec-tile">
-                <span class="spec-label">BASE LOCATION</span>
-                <span class="spec-value">Whitefield, Bengaluru, India</span>
-              </div>
-              <div class="spec-tile">
-                <span class="spec-label">ACADEMIC STREAM</span>
-                <span class="spec-value">CSE — Data Science (3rd Year)</span>
-              </div>
-              <div class="spec-tile">
-                <span class="spec-label">DEV TOOLS</span>
-                <span class="spec-value">VS Code, Antigravity, Android Studio, Xcode</span>
-              </div>
-              <div class="spec-tile">
-                <span class="spec-label">BEYOND CODE</span>
-                <span class="spec-value">Sports, Hackathons &amp; Teamwork</span>
+              <div class="roadmap-tag font-mono">
+                Continuous Learning Roadmap • MVJCE Bengaluru
               </div>
             </div>
-
           </div>
-
-          <!-- Right Column: Engineering Principles & Core Competencies -->
-          <div class="about-principles-col">
-
-            <div class="principles-panel">
-              <h3 class="panel-heading">
-                <span class="heading-pip">▪</span>
-                <span>ENGINEERING PILLARS</span>
-              </h3>
-
-              <div class="pillar-cards-list">
-
-                <!-- Pillar 1 -->
-                <div class="pillar-card">
-                  <div class="pillar-num">01</div>
-                  <div class="pillar-content">
-                    <h4 class="pillar-title">Backend &amp; Database Engineering</h4>
-                    <p class="pillar-text">
-                      Designing robust RESTful APIs with FastAPI, Flask, and Express alongside clean, reliable database models across MongoDB, Firebase, and Supabase.
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Pillar 2 -->
-                <div class="pillar-card">
-                  <div class="pillar-num">02</div>
-                  <div class="pillar-content">
-                    <h4 class="pillar-title">Data Science &amp; Machine Learning</h4>
-                    <p class="pillar-text">
-                      Extracting insights through structured data analysis, creating informative visualizations, and developing computer vision pipelines with OpenCV.
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Pillar 3 -->
-                <div class="pillar-card">
-                  <div class="pillar-num">03</div>
-                  <div class="pillar-content">
-                    <h4 class="pillar-title">Athletic Focus &amp; Teamwork</h4>
-                    <p class="pillar-text">
-                      Bringing the endurance, discipline, and collaborative mindset cultivated through sports to hackathons, group sprints, and practical project builds.
-                    </p>
-                  </div>
-                </div>
-
-              </div>
-
-              <!-- Core Competencies Checklist -->
-              <div class="competencies-checklist-wrap">
-                <span class="checklist-title">CORE FOCUS &amp; COMPETENCIES:</span>
-                <div class="checklist-grid">
-                  <span class="check-item"><span class="check-icon">✓</span> Machine Learning &amp; Data Science</span>
-                  <span class="check-item"><span class="check-icon">✓</span> Backend APIs (FastAPI, Flask, Express)</span>
-                  <span class="check-item"><span class="check-icon">✓</span> Database Design (MongoDB, Firebase, Supabase)</span>
-                  <span class="check-item"><span class="check-icon">✓</span> Data Visualization &amp; Insights</span>
-                  <span class="check-item"><span class="check-icon">✓</span> OpenCV &amp; Computer Vision</span>
-                  <span class="check-item"><span class="check-icon">✓</span> Android Studio &amp; Xcode Development</span>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-
         </div>
-
       </div>
     </section>
-
 
     <!-- ==========================================================================
-         [EDITABLE SECTION: SELECTED PROJECTS — STUDIO SHOWCASE]
+         [06] CONTACT SECTION — CONNECT
     ========================================================================== -->
-    <section id="projects" class="section-block projects-section">
-      <div class="section-container">
+    <section id="contact" class="content-section">
+      <div class="section-tag-row">
+        <svg class="icon-sm icon-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 2 11 13" />
+          <path d="m22 2-7 20-4-9-9-4 20-7z" />
+        </svg>
+        <span class="tag-label font-mono">GET IN TOUCH</span>
+      </div>
 
-        <!-- Section Header -->
-        <header class="editorial-section-header">
-          <div class="section-tag-group">
-            <span class="section-index-num">02/</span>
-            <span class="section-tag-name">PORTFOLIO OF WORKS</span>
-          </div>
-          <h2 class="section-title">
-            Featured <span class="italic-serif">engineering</span> initiatives &amp; platforms.
-          </h2>
-          <p class="section-dek">
-            A curated portfolio of software projects in development, machine learning exploratory systems, and academic problem-solving initiatives.
-          </p>
+      <h2 class="section-heading">
+        <span class="hash-accent">//</span> Connect
+      </h2>
+      <p class="section-subtext">
+        Ready to discuss engineering roles, internships, or collaborative projects? Let's connect.
+      </p>
 
-          <!-- Category Filter Bar -->
-          <div class="editorial-filter-bar">
-            <span class="filter-label">FILTER BY //</span>
-            <div class="filter-pills-list">
-              <button type="button" class="editorial-filter-btn active" data-filter="all">All Projects (6)</button>
-              <button type="button" class="editorial-filter-btn" data-filter="ml">Machine Learning &amp; AI</button>
-              <button type="button" class="editorial-filter-btn" data-filter="web">Full Stack &amp; Web</button>
-              <button type="button" class="editorial-filter-btn" data-filter="data">Data &amp; Vision</button>
+      <div class="contact-grid">
+        <!-- Left: Direct Coordinates Card -->
+        <div class="glass-card contact-info-card">
+          <div class="contact-profile-header">
+            <picture class="contact-avatar-box">
+              <source srcset="assets/images/profile.webp" type="image/webp">
+              <img src="assets/images/profile.jpg" alt="Mahesh Basarkhoda" class="contact-avatar" width="64" height="64">
+            </picture>
+            <div>
+              <h3 class="contact-name">Mahesh Basarkhoda</h3>
+              <p class="contact-tagline text-muted">CSE (Data Science) • Backend Developer</p>
+              <p class="contact-subline font-mono text-secondary">MVJ College of Engineering, Bengaluru</p>
             </div>
           </div>
-        </header>
 
-        <!-- Large Studio Project Showcase Cards -->
-        <div class="projects-showcase-list" id="projects-showcase-list">
-
-          <!-- PROJECT 01: Collection — Wardrobe Management Application -->
-          <article class="showcase-card" data-category="web fullstack">
-            <div class="card-masthead">
-              <div class="card-index-group">
-                <span class="project-num">PROJECT // 01</span>
-                <span class="project-tag-pill">FULL STACK WEB APPLICATION</span>
-                <span class="project-status-pill">IN DEVELOPMENT</span>
+          <!-- Channel Rows with 1-Click Copy -->
+          <div class="contact-rows-list">
+            <!-- Email -->
+            <div class="contact-row group">
+              <div class="contact-row-icon bg-primary-10 text-primary">
+                <svg class="icon-contact" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect width="20" height="16" x="2" y="4" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
               </div>
-              <span class="project-year">2024 — Present</span>
+              <div class="contact-row-data">
+                <span class="row-label font-mono">OFFICIAL EMAIL</span>
+                <a href="mailto:maheshbasarakod05@gmail.com" class="row-value"
+                  id="contact-email-val">maheshbasarakod05@gmail.com</a>
+              </div>
+              <button type="button" class="btn-copy-action" id="btn-copy-email" aria-label="Copy Email to Clipboard"
+                title="Copy email to clipboard">
+                <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
+                  <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
+                </svg>
+                <span class="copy-bubble" id="tooltip-email">Copied!</span>
+              </button>
             </div>
 
-            <div class="card-content-wrap">
-              <div class="card-content-main">
-                <h3 class="project-title">Collection — Wardrobe Management Application</h3>
-                <span class="project-subtitle">Wardrobe Management &amp; Intelligent Outfit Matching</span>
-
-                <p class="project-narrative">
-                  A wardrobe management application for organizing clothing collections and exploring intelligent outfit matching.
-                </p>
+            <!-- WhatsApp / Phone -->
+            <div class="contact-row group">
+              <div class="contact-row-icon bg-whatsapp-10 text-whatsapp">
+                <svg class="icon-contact" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.78 14.07c-.24.68-1.39 1.3-1.92 1.38-.49.08-1.12.11-3.62-.91-3.19-1.31-5.23-4.57-5.39-4.78-.16-.21-1.3-1.73-1.3-3.3 0-1.57.82-2.34 1.11-2.66.29-.32.64-.4.85-.4.21 0 .43.01.62.01.2 0 .47-.08.73.56.27.67.92 2.27 1 2.43.08.17.13.36.03.57-.1.21-.16.34-.31.52-.16.18-.34.4-.48.54-.16.16-.33.33-.14.65.19.32.84 1.38 1.8 2.24 1.24 1.1 2.28 1.44 2.61 1.6.32.16.51.13.7-.08.19-.21.82-.96 1.04-1.28.22-.32.44-.27.73-.16.29.11 1.86.88 2.18 1.04.32.16.54.24.62.38.08.14.08.82-.16 1.5z" />
+                </svg>
               </div>
-
-              <div class="card-content-footer">
-                <div class="project-meta-box">
-                  <span class="meta-label">TECHNOLOGIES &amp; ARCHITECTURE</span>
-                  <div class="tech-pill-wrap">
-                    <span class="tech-tag">Next.js</span>
-                    <span class="tech-tag">JavaScript / TypeScript</span>
-                    <span class="tech-tag">Node.js</span>
-                    <span class="tech-tag">Express.js</span>
-                    <span class="tech-tag">Database Integration</span>
-                  </div>
-                </div>
-
-                <div class="project-actions-row">
-                  <a href="https://github.com/maheshgouda05/collection" target="_blank" rel="noopener noreferrer"
-                    class="btn-project-primary" title="View Collection on GitHub">
-                    <svg class="btn-git-icon" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                    </svg>
-                    <span>View on GitHub</span>
-                    <span class="arrow">↗</span>
-                  </a>
-                </div>
+              <div class="contact-row-data">
+                <span class="row-label font-mono">PHONE &amp; WHATSAPP</span>
+                <a href="https://wa.me/919964073064" target="_blank" rel="noopener noreferrer" class="row-value"
+                  id="contact-phone-val">+91 9964073064</a>
               </div>
-            </div>
-          </article>
-
-
-          <!-- PROJECT 02: Friday-AI -->
-          <article class="showcase-card" data-category="ml ai">
-            <div class="card-masthead">
-              <div class="card-index-group">
-                <span class="project-num">PROJECT // 02</span>
-                <span class="project-tag-pill">ARTIFICIAL INTELLIGENCE</span>
-                <span class="project-status-pill">IN DEVELOPMENT</span>
-              </div>
-              <span class="project-year">2024 — Present</span>
+              <button type="button" class="btn-copy-action" id="btn-copy-phone" aria-label="Copy Phone to Clipboard"
+                title="Copy phone to clipboard">
+                <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
+                  <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
+                </svg>
+                <span class="copy-bubble" id="tooltip-phone">Copied!</span>
+              </button>
             </div>
 
-            <div class="card-content-wrap">
-              <div class="card-content-main">
-                <h3 class="project-title">Friday-AI</h3>
-                <span class="project-subtitle">Personal Artificial Intelligence Development Initiative</span>
-
-                <p class="project-narrative">
-                  An AI-related project currently under development.
-                </p>
+            <!-- Location -->
+            <div class="contact-row">
+              <div class="contact-row-icon bg-muted-icon">
+                <svg class="icon-contact text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
               </div>
-
-              <div class="card-content-footer">
-                <div class="project-meta-box">
-                  <span class="meta-label">PLANNED DIRECTION &amp; STACK</span>
-                  <div class="tech-pill-wrap">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Machine Learning [In Progress]</span>
-                    <span class="tech-tag">AI Workflows</span>
-                    <!-- [EDITABLE]: Add additional technologies as stack is confirmed -->
-                    <span class="tech-tag">[Tech Stack TBA]</span>
-                  </div>
-                </div>
-
-                <div class="project-actions-row">
-                  <a href="https://github.com/maheshgouda05/friday_ai_tool" target="_blank" rel="noopener noreferrer"
-                    class="btn-project-primary" title="View Friday-AI on GitHub">
-                    <svg class="btn-git-icon" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                    </svg>
-                    <span>View on GitHub</span>
-                    <span class="arrow">↗</span>
-                  </a>
-                </div>
+              <div class="contact-row-data">
+                <span class="row-label font-mono">LOCATION</span>
+                <span class="row-value">Bengaluru, Karnataka, India</span>
               </div>
             </div>
-          </article>
+          </div>
 
+          <!-- Bottom Channel Quick Links -->
+          <div class="contact-channel-bar">
+            <a href="https://www.linkedin.com/in/mahesh-gouda-3745a0323/" target="_blank" rel="noopener noreferrer"
+              class="channel-btn linkedin-btn">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
+              <span>LinkedIn</span>
+            </a>
 
-          <!-- PROJECT 03: OpenCV / Computer Vision -->
-          <article class="showcase-card" data-category="ml data">
-            <div class="card-masthead">
-              <div class="card-index-group">
-                <span class="project-num">PROJECT // 03</span>
-                <span class="project-tag-pill">COMPUTER VISION &amp; OPENCV</span>
-                <span class="project-status-pill in-progress">IN PROGRESS</span>
-              </div>
-              <span class="project-year">2024</span>
-            </div>
+            <a href="https://github.com/maheshgouda05" target="_blank" rel="noopener noreferrer"
+              class="channel-btn github-btn">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+              <span>GitHub</span>
+            </a>
 
-            <div class="card-content-wrap">
-              <div class="card-content-main">
-                <h3 class="project-title">OpenCV / Computer Vision</h3>
-                <span class="project-subtitle">Practical Computer Vision &amp; Image Processing Experiments</span>
-
-                <p class="project-narrative">
-                  Learning and developing computer vision applications using OpenCV.
-                </p>
-              </div>
-
-              <div class="card-content-footer">
-                <div class="project-meta-box">
-                  <span class="meta-label">CORE TOOLKIT &amp; LIBRARIES</span>
-                  <div class="tech-pill-wrap">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">OpenCV</span>
-                    <span class="tech-tag">Computer Vision</span>
-                    <span class="tech-tag">NumPy</span>
-                    <span class="tech-tag">Image Processing</span>
-                  </div>
-                </div>
-
-                <div class="project-actions-row">
-                  <a href="https://github.com/maheshgouda05/opencv" target="_blank" rel="noopener noreferrer"
-                    class="btn-project-primary" title="View OpenCV on GitHub">
-                    <svg class="btn-git-icon" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                    </svg>
-                    <span>View on GitHub</span>
-                    <span class="arrow">↗</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-
-          <!-- PROJECT 04: Analytix Club Web Application -->
-          <article class="showcase-card" data-category="web fullstack">
-            <div class="card-masthead">
-              <div class="card-index-group">
-                <span class="project-num">PROJECT // 04</span>
-                <span class="project-tag-pill">CAMPUS WEB APPLICATION</span>
-                <span class="project-status-pill">IN DEVELOPMENT</span>
-              </div>
-              <span class="project-year">2024</span>
-            </div>
-
-            <div class="card-content-wrap">
-              <div class="card-content-main">
-                <h3 class="project-title">Analytix Club Web Application</h3>
-                <span class="project-subtitle">Role: Full-Stack Developer • Backend &amp; Database Integration</span>
-
-                <p class="project-narrative">
-                  I am currently building a web application for the Analytix Club, contributing to backend development and database integration to support the club's activities.
-                </p>
-              </div>
-
-              <div class="card-content-footer">
-                <div class="project-meta-box">
-                  <span class="meta-label">CONTRIBUTION SCOPE &amp; STACK</span>
-                  <div class="tech-pill-wrap">
-                    <span class="tech-tag">Full-Stack Development</span>
-                    <span class="tech-tag">Backend Engineering</span>
-                    <span class="tech-tag">Database Integration</span>
-                    <span class="tech-tag">RESTful APIs</span>
-                    <!-- [EDITABLE]: Add exact database/frameworks used -->
-                    <span class="tech-tag">[Add Tech Specifics]</span>
-                  </div>
-                </div>
-
-                <div class="project-actions-row">
-                  <!-- [EDITABLE]: Update to dedicated club repo URL when public -->
-                  <a href="https://github.com/maheshgouda05" target="_blank" rel="noopener noreferrer"
-                    class="btn-project-primary" title="View Analytix Club Web App on GitHub">
-                    <svg class="btn-git-icon" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                    </svg>
-                    <span>View on GitHub</span>
-                    <span class="arrow">↗</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-
-          <!-- PROJECT 05: SIH — Hyperlocal Monsoon Onset & Break Prediction System -->
-          <article class="showcase-card" data-category="ml data">
-            <div class="card-masthead">
-              <div class="card-index-group">
-                <span class="project-num">PROJECT // 05</span>
-                <span class="project-tag-pill">SMART INDIA HACKATHON</span>
-                <span class="project-status-pill sih">IN DEVELOPMENT</span>
-              </div>
-              <span class="project-year">2024</span>
-            </div>
-
-            <div class="card-content-wrap">
-              <div class="card-content-main">
-                <h3 class="project-title">SIH — Hyperlocal Monsoon Onset &amp; Break Prediction System</h3>
-                <span class="project-subtitle">Block &amp; Village Scale Weather Forecasting Exploration</span>
-
-                <p class="project-narrative">
-                  A major project focused on exploring the prediction of monsoon onset and break periods at a hyperlocal, block or village scale. The project direction involves weather prediction, meteorological data analysis, and machine learning.
-                </p>
-              </div>
-
-              <div class="card-content-footer">
-                <div class="project-meta-box">
-                  <span class="meta-label">RELEVANT FOCUS AREAS &amp; STACK</span>
-                  <div class="tech-pill-wrap">
-                    <span class="tech-tag">Machine Learning</span>
-                    <span class="tech-tag">Data Science</span>
-                    <span class="tech-tag">Data Visualization</span>
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Predictive Analytics</span>
-                  </div>
-                </div>
-
-                <div class="project-actions-row">
-                  <!-- [EDITABLE]: Update to dedicated SIH repo URL when published -->
-                  <a href="https://github.com/maheshgouda05" target="_blank" rel="noopener noreferrer"
-                    class="btn-project-primary" title="View SIH Project on GitHub">
-                    <svg class="btn-git-icon" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                    </svg>
-                    <span>View on GitHub</span>
-                    <span class="arrow">↗</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-
-          <!-- PROJECT 06: Zewa — Zero Waste -->
-          <article class="showcase-card" data-category="web">
-            <div class="card-masthead">
-              <div class="card-index-group">
-                <span class="project-num">PROJECT // 06</span>
-                <span class="project-tag-pill">SUSTAINABLE FOOD INITIATIVE</span>
-                <span class="project-status-pill">IN DEVELOPMENT</span>
-              </div>
-              <span class="project-year">2024 — Present</span>
-            </div>
-
-            <div class="card-content-wrap">
-              <div class="card-content-main">
-                <h3 class="project-title">Zewa — Zero Waste</h3>
-                <span class="project-subtitle">Surplus Food Redistribution &amp; Waste Reduction Initiative</span>
-
-                <p class="project-narrative">
-                  A zero-waste food initiative designed to reduce food waste from hotels and restaurants. The platform helps food businesses list unsold meals near closing time at discounted prices (~50% off), connecting them with customers to encourage sustainable consumption and make surplus food affordable and accessible.
-                </p>
-              </div>
-
-              <div class="card-content-footer">
-                <div class="project-meta-box">
-                  <span class="meta-label">KEY FEATURES &amp; FOCUS AREAS</span>
-                  <div class="tech-pill-wrap">
-                    <span class="tech-tag">Surplus Food Listing</span>
-                    <span class="tech-tag">Discounted Pricing (~50% Off)</span>
-                    <span class="tech-tag">Zero Waste Initiative</span>
-                    <span class="tech-tag">Sustainable Consumption</span>
-                    <span class="tech-tag">Food Waste Reduction</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
+            <a href="mailto:maheshbasarakod05@gmail.com?subject=Portfolio%20Inquiry" class="channel-btn resume-btn">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+                <polyline points="10 9 9 9 8 9" />
+              </svg>
+              <span>Contact Direct</span>
+            </a>
+          </div>
         </div>
 
+        <!-- Right: Message Dispatch Form -->
+        <div class="glass-card contact-form-card">
+          <h3 class="form-title">Send a Message</h3>
+          <p class="form-desc text-muted">
+            Have a project idea, question, or opportunity? Fill out the form below to send a direct message.
+          </p>
+
+          <form id="contact-form" class="cyber-form" novalidate>
+            <!-- Inquiry Category Selection -->
+            <div class="form-group">
+              <label class="form-label font-mono">PURPOSE OF INQUIRY</label>
+              <div class="inquiry-buttons-group" role="radiogroup" aria-label="Inquiry Category">
+                <button type="button" class="inquiry-pill active" data-val="Internship Opportunity">Internship Opportunity</button>
+                <button type="button" class="inquiry-pill" data-val="Project Collaboration">Project Collaboration</button>
+                <button type="button" class="inquiry-pill" data-val="Engineering Role">Engineering Role</button>
+                <button type="button" class="inquiry-pill" data-val="General Discussion">General Discussion</button>
+              </div>
+              <input type="hidden" id="inquiry-category-input" value="Internship Opportunity">
+            </div>
+
+            <!-- Name Field -->
+            <div class="form-group">
+              <label for="form-name" class="form-label font-mono">YOUR NAME <span class="text-primary">*</span></label>
+              <input type="text" id="form-name" name="name" class="form-input" placeholder="e.g. Alex Sharma" required>
+            </div>
+
+            <!-- Email Field -->
+            <div class="form-group">
+              <label for="form-email" class="form-label font-mono">EMAIL ADDRESS <span class="text-primary">*</span></label>
+              <input type="email" id="form-email" name="email" class="form-input" placeholder="alex@company.com" required>
+            </div>
+
+            <!-- Subject Field -->
+            <div class="form-group">
+              <label for="form-subject" class="form-label font-mono">SUBJECT</label>
+              <input type="text" id="form-subject" name="subject" class="form-input" placeholder="Collaboration / Opportunity">
+            </div>
+
+            <!-- Message Field -->
+            <div class="form-group">
+              <label for="form-message" class="form-label font-mono">MESSAGE <span class="text-primary">*</span></label>
+              <textarea id="form-message" name="message" rows="4" class="form-textarea"
+                placeholder="Hi Mahesh, I came across your portfolio and would like to discuss..." required></textarea>
+            </div>
+
+            <!-- Feedback Notification Banner -->
+            <div id="form-feedback" class="form-feedback-box" style="display: none;" role="alert"></div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn-submit-form" id="btn-submit-form">
+              <span>Dispatch Message</span>
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </button>
+          </form>
+        </div>
       </div>
     </section>
-
 
     <!-- ==========================================================================
-         [TECHNICAL ARSENAL / SKILLS MATRIX]
+         FOOTER
     ========================================================================== -->
-    <section id="skills" class="section-block skills-section">
-      <div class="section-container">
-
-        <!-- Section Header -->
-        <header class="editorial-section-header">
-          <div class="section-tag-group">
-            <span class="section-index-num">03/</span>
-            <span class="section-tag-name">TECHNICAL ARSENAL</span>
-          </div>
-          <h2 class="section-title">
-            Structured skills across the <span class="italic-serif">engineering</span> stack.
-          </h2>
-          <p class="section-dek">
-            A transparent overview of programming languages, backend frameworks, databases, developer tooling, and core areas of interest.
-          </p>
-        </header>
-
-        <!-- 5-Panel Architectural Grid -->
-        <div class="skills-matrix-grid">
-
-          <!-- Panel 1: Programming Languages -->
-          <div class="skill-matrix-panel">
-            <div class="panel-badge-bar">
-              <span class="matrix-code">01 // LANGUAGES</span>
-              <span class="matrix-count">4 Languages</span>
-            </div>
-            <h3 class="matrix-heading">Programming Languages</h3>
-            <p class="matrix-desc">Core programming languages utilized for backend services, algorithmic logic, and data analysis.</p>
-
-            <div class="skill-items-list">
-              <!-- Python -->
-              <div class="skill-ledger-item">
-                <div class="item-title-row">
-                  <span class="skill-name">Python</span>
-                  <span class="skill-tier">Proficient</span>
-                </div>
-                <div class="skill-indicator-track">
-                  <div class="skill-indicator-fill" style="--skill-pct: 82%;"></div>
-                </div>
-              </div>
-
-              <!-- Java -->
-              <div class="skill-ledger-item">
-                <div class="item-title-row">
-                  <span class="skill-name">Java</span>
-                  <span class="skill-tier">Intermediate</span>
-                </div>
-                <div class="skill-indicator-track">
-                  <div class="skill-indicator-fill" style="--skill-pct: 75%;"></div>
-                </div>
-              </div>
-
-              <!-- C (Basic) -->
-              <div class="skill-ledger-item">
-                <div class="item-title-row">
-                  <span class="skill-name">C</span>
-                  <span class="skill-tier">Basic</span>
-                </div>
-                <div class="skill-indicator-track">
-                  <div class="skill-indicator-fill" style="--skill-pct: 55%;"></div>
-                </div>
-              </div>
-
-              <!-- C++ (Basic) -->
-              <div class="skill-ledger-item">
-                <div class="item-title-row">
-                  <span class="skill-name">C++</span>
-                  <span class="skill-tier">Basic</span>
-                </div>
-                <div class="skill-indicator-track">
-                  <div class="skill-indicator-fill" style="--skill-pct: 55%;"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Panel 2: Backend Development -->
-          <div class="skill-matrix-panel">
-            <div class="panel-badge-bar">
-              <span class="matrix-code">02 // BACKEND</span>
-              <span class="matrix-count">5 Core Technologies</span>
-            </div>
-            <h3 class="matrix-heading">Backend Development</h3>
-            <p class="matrix-desc">Developing RESTful application programming interfaces, web server logic, and structured microservices.</p>
-
-            <div class="skill-items-list">
-              <!-- FastAPI -->
-              <div class="skill-ledger-item">
-                <div class="item-title-row">
-                  <span class="skill-name">FastAPI</span>
-                  <span class="skill-tier">Working Proficiency</span>
-                </div>
-                <div class="skill-indicator-track">
-                  <div class="skill-indicator-fill" style="--skill-pct: 78%;"></div>
-                </div>
-              </div>
-
-              <!-- Flask -->
-              <div class="skill-ledger-item">
-                <div class="item-title-row">
-                  <span class="skill-name">Flask</span>
-                  <span class="skill-tier">Working Proficiency</span>
-                </div>
-                <div class="skill-indicator-track">
-                  <div class="skill-indicator-fill" style="--skill-pct: 76%;"></div>
-                </div>
-              </div>
-
-              <!-- Node.js -->
-              <div class="skill-ledger-item">
-                <div class="item-title-row">
-                  <span class="skill-name">Node.js</span>
-                  <span class="skill-tier">Working Proficiency</span>
-                </div>
-                <div class="skill-indicator-track">
-                  <div class="skill-indicator-fill" style="--skill-pct: 78%;"></div>
-                </div>
-              </div>
-
-              <!-- Express.js -->
-              <div class="skill-ledger-item">
-                <div class="item-title-row">
-                  <span class="skill-name">Express.js</span>
-                  <span class="skill-tier">Working Proficiency</span>
-                </div>
-                <div class="skill-indicator-track">
-                  <div class="skill-indicator-fill" style="--skill-pct: 78%;"></div>
-                </div>
-              </div>
-
-              <!-- REST API development -->
-              <div class="skill-ledger-item">
-                <div class="item-title-row">
-                  <span class="skill-name">REST API Development</span>
-                  <span class="skill-tier">Core Focus</span>
-                </div>
-                <div class="skill-indicator-track">
-                  <div class="skill-indicator-fill" style="--skill-pct: 82%;"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Panel 3: Databases -->
-          <div class="skill-matrix-panel">
-            <div class="panel-badge-bar">
-              <span class="matrix-code">03 // DATABASES</span>
-              <span class="matrix-count">3 Database Systems</span>
-            </div>
-            <h3 class="matrix-heading">Databases</h3>
-            <p class="matrix-desc">Document storage, cloud persistence, and relational data management for practical applications.</p>
-
-            <div class="skill-items-list">
-              <!-- MongoDB -->
-              <div class="skill-ledger-item">
-                <div class="item-title-row">
-                  <span class="skill-name">MongoDB</span>
-                  <span class="skill-tier">Active Integration</span>
-                </div>
-                <div class="skill-indicator-track">
-                  <div class="skill-indicator-fill" style="--skill-pct: 78%;"></div>
-                </div>
-              </div>
-
-              <!-- Firebase -->
-              <div class="skill-ledger-item">
-                <div class="item-title-row">
-                  <span class="skill-name">Firebase</span>
-                  <span class="skill-tier">Active Integration</span>
-                </div>
-                <div class="skill-indicator-track">
-                  <div class="skill-indicator-fill" style="--skill-pct: 76%;"></div>
-                </div>
-              </div>
-
-              <!-- Supabase -->
-              <div class="skill-ledger-item">
-                <div class="item-title-row">
-                  <span class="skill-name">Supabase</span>
-                  <span class="skill-tier">Active Integration</span>
-                </div>
-                <div class="skill-indicator-track">
-                  <div class="skill-indicator-fill" style="--skill-pct: 74%;"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Panel 4: Development Tools -->
-          <div class="skill-matrix-panel">
-            <div class="panel-badge-bar">
-              <span class="matrix-code">04 // ENVIRONMENT</span>
-              <span class="matrix-count">4 Developer Environments</span>
-            </div>
-            <h3 class="matrix-heading">Development Tools</h3>
-            <p class="matrix-desc">Primary IDEs, platform-specific development studios, and agentic workflows.</p>
-
-            <div class="skill-items-list">
-              <!-- Visual Studio Code -->
-              <div class="skill-ledger-item">
-                <div class="item-title-row">
-                  <span class="skill-name">Visual Studio Code</span>
-                  <span class="skill-tier">Primary Editor</span>
-                </div>
-                <div class="skill-indicator-track">
-                  <div class="skill-indicator-fill" style="--skill-pct: 90%;"></div>
-                </div>
-              </div>
-
-              <!-- Antigravity -->
-              <div class="skill-ledger-item">
-                <div class="item-title-row">
-                  <span class="skill-name">Antigravity</span>
-                  <span class="skill-tier">Web Dev Agentic IDE</span>
-                </div>
-                <div class="skill-indicator-track">
-                  <div class="skill-indicator-fill" style="--skill-pct: 85%;"></div>
-                </div>
-              </div>
-
-              <!-- Android Studio -->
-              <div class="skill-ledger-item">
-                <div class="item-title-row">
-                  <span class="skill-name">Android Studio</span>
-                  <span class="skill-tier">Android Apps</span>
-                </div>
-                <div class="skill-indicator-track">
-                  <div class="skill-indicator-fill" style="--skill-pct: 75%;"></div>
-                </div>
-              </div>
-
-              <!-- Xcode -->
-              <div class="skill-ledger-item">
-                <div class="item-title-row">
-                  <span class="skill-name">Xcode</span>
-                  <span class="skill-tier">Apple Platform</span>
-                </div>
-                <div class="skill-indicator-track">
-                  <div class="skill-indicator-fill" style="--skill-pct: 72%;"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Panel 5: Areas of Interest (Wide Layout) -->
-          <div class="skill-matrix-panel panel-wide">
-            <div class="panel-badge-bar">
-              <span class="matrix-code">05 // SPECIALIZATIONS &amp; DOMAINS</span>
-              <span class="matrix-count">6 Core Areas of Learning</span>
-            </div>
-            <h3 class="matrix-heading">Areas of Interest &amp; Continuous Learning</h3>
-            <p class="matrix-desc">Key focus areas guiding my academic coursework, independent experimentation, and software development path.</p>
-
-            <div class="skill-items-list grid-two-col">
-              <!-- Machine Learning -->
-              <div class="skill-ledger-item">
-                <div class="item-title-row">
-                  <span class="skill-name">Machine Learning</span>
-                  <span class="skill-tier">Core Interest</span>
-                </div>
-                <div class="skill-indicator-track">
-                  <div class="skill-indicator-fill" style="--skill-pct: 82%;"></div>
-                </div>
-              </div>
-
-              <!-- Data Science -->
-              <div class="skill-ledger-item">
-                <div class="item-title-row">
-                  <span class="skill-name">Data Science</span>
-                  <span class="skill-tier">Academic Specialization</span>
-                </div>
-                <div class="skill-indicator-track">
-                  <div class="skill-indicator-fill" style="--skill-pct: 84%;"></div>
-                </div>
-              </div>
-
-              <!-- Data Visualization -->
-              <div class="skill-ledger-item">
-                <div class="item-title-row">
-                  <span class="skill-name">Data Visualization</span>
-                  <span class="skill-tier">Exploratory Analysis</span>
-                </div>
-                <div class="skill-indicator-track">
-                  <div class="skill-indicator-fill" style="--skill-pct: 80%;"></div>
-                </div>
-              </div>
-
-              <!-- OpenCV and Computer Vision -->
-              <div class="skill-ledger-item">
-                <div class="item-title-row">
-                  <span class="skill-name">OpenCV &amp; Computer Vision</span>
-                  <span class="skill-tier">In Progress</span>
-                </div>
-                <div class="skill-indicator-track">
-                  <div class="skill-indicator-fill" style="--skill-pct: 74%;"></div>
-                </div>
-              </div>
-
-              <!-- Backend Engineering -->
-              <div class="skill-ledger-item">
-                <div class="item-title-row">
-                  <span class="skill-name">Backend Engineering</span>
-                  <span class="skill-tier">Architectural Focus</span>
-                </div>
-                <div class="skill-indicator-track">
-                  <div class="skill-indicator-fill" style="--skill-pct: 82%;"></div>
-                </div>
-              </div>
-
-              <!-- Database Design and Integration -->
-              <div class="skill-ledger-item">
-                <div class="item-title-row">
-                  <span class="skill-name">Database Design &amp; Integration</span>
-                  <span class="skill-tier">Data Modeling</span>
-                </div>
-                <div class="skill-indicator-track">
-                  <div class="skill-indicator-fill" style="--skill-pct: 78%;"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <span class="footer-monogram font-mono">MB</span>
+          <span class="footer-copy font-mono">
+            © <span id="current-year">2026</span> Mahesh Basarkhoda. All rights reserved.
+          </span>
         </div>
 
-      </div>
-    </section>
-
-
-    <!-- ==========================================================================
-         [EDITABLE SECTION: EDUCATION LEDGER — TIMELINE & CREDENTIALS]
-    ========================================================================== -->
-    <section id="education" class="section-block education-section">
-      <div class="section-container">
-
-        <!-- Section Header -->
-        <header class="editorial-section-header">
-          <div class="section-tag-group">
-            <span class="section-index-num">04/</span>
-            <span class="section-tag-name">ACADEMIC LEDGER</span>
-          </div>
-          <h2 class="section-title">
-            Education &amp; <span class="italic-serif">scholastic</span> milestones.
-          </h2>
-          <p class="section-dek">
-            A chronological ledger of formal qualifications, key academic coursework, and institutions.
-          </p>
-        </header>
-
-        <!-- Editorial Academic Ledger Cards -->
-        <div class="education-ledger-list">
-
-          <!-- Current Undergraduate Degree -->
-          <article class="ledger-card">
-            <div class="ledger-card-aside">
-              <span class="ledger-period-badge">2024 — 2028</span>
-              <span class="ledger-status-tag">Third Year (Current)</span>
-            </div>
-
-            <div class="ledger-card-content">
-              <div class="ledger-header-row">
-                <div class="ledger-titles">
-                  <h3 class="ledger-degree-name">B.E. / B.Tech — Computer Science and Engineering (Data Science)</h3>
-                  <span class="ledger-institution">MVJ College of Engineering, Bengaluru</span>
-                </div>
-              </div>
-
-              <p class="ledger-summary">
-                Third-year Computer Science and Engineering student specializing in Data Science at MVJ College of Engineering, Bengaluru. Actively developing backend architectures, exploring predictive machine learning models, designing databases, and participating in collegiate hackathons.
-              </p>
-
-              <!-- Key Coursework Chips -->
-              <div class="ledger-coursework-wrap">
-                <span class="coursework-title">REPRESENTATIVE COURSEWORK &amp; STUDY //</span>
-                <div class="coursework-tags">
-                  <span class="course-chip">Data Science</span>
-                  <span class="course-chip">Machine Learning</span>
-                  <span class="course-chip">Database Management Systems</span>
-                  <span class="course-chip">Data Structures &amp; Algorithms</span>
-                  <span class="course-chip">Backend Engineering</span>
-                  <span class="course-chip">Computer Vision</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
+        <div class="footer-right font-mono">
+          <a href="#about" class="back-to-top-link">
+            <span>Back to top</span>
+            <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m18 15-6-6-6 6" />
+            </svg>
+          </a>
         </div>
-
       </div>
-    </section>
-
-
-    <!-- ==========================================================================
-         [HACKATHONS & TECHNICAL ACTIVITIES / SPORTS & INTERESTS]
-    ========================================================================== -->
-    <section id="activities" class="section-block credentials-section">
-      <div class="section-container">
-
-        <!-- Section Header -->
-        <header class="editorial-section-header">
-          <div class="section-tag-group">
-            <span class="section-index-num">05/</span>
-            <span class="section-tag-name">HACKATHONS &amp; ACTIVITIES</span>
-          </div>
-          <h2 class="section-title">
-            Hackathons &amp; <span class="italic-serif">technical</span> activities.
-          </h2>
-          <p class="section-dek">
-            Collegiate hackathons, collaborative technical problem-solving, athletic drive, and learning milestones.
-          </p>
-        </header>
-
-        <!-- Asymmetric 2-Column Split: Hackathons Left, Sports & Credentials Right -->
-        <div class="credentials-split-grid">
-
-          <!-- Left Column: Hackathon Participations -->
-          <div class="certifications-ledger-col">
-            <div class="sub-column-header">
-              <span class="sub-col-tag">HACKATHON PARTICIPATIONS //</span>
-              <span class="sub-col-count">3 Hackathons</span>
-            </div>
-
-            <div class="milestones-stack">
-
-              <!-- Hackathon 1: TECHFLIX Season 2 — Prompt Wars -->
-              <div class="milestone-card">
-                <div class="milestone-badge">01</div>
-                <div class="milestone-body">
-                  <div class="milestone-header">
-                    <h4 class="milestone-title">TECHFLIX Season 2 — Prompt Wars</h4>
-                    <span class="milestone-date">15 April 2026</span>
-                  </div>
-                  <span class="milestone-org">Dayananda Sagar University, Bengaluru</span>
-                  <p class="milestone-desc">
-                    Active participation in the Prompt Wars event at TECHFLIX Season 2, exploring prompt engineering strategies, rapid generative AI workflows, and iterative technical problem-solving under competitive constraints.
-                  </p>
-                  <div class="milestone-meta-row">
-                    <span class="milestone-recognition-badge">Participation Certificate Received ✓</span>
-                    <!-- [EDITABLE]: If certificate file is placed in project root, uncomment below: -->
-                    <!-- <a href="techflix_certificate.pdf" target="_blank" rel="noopener noreferrer" class="milestone-cert-link">Certificate ↗</a> -->
-                  </div>
-                </div>
-              </div>
-
-              <!-- Hackathon 2: Pravrutti 2.0 — National Level Techfest -->
-              <div class="milestone-card">
-                <div class="milestone-badge">02</div>
-                <div class="milestone-body">
-                  <div class="milestone-header">
-                    <h4 class="milestone-title">Pravrutti 2.0 — National Level Techfest</h4>
-                    <span class="milestone-date">14–16 October 2026</span>
-                  </div>
-                  <span class="milestone-org">Ramaiah University of Applied Sciences, Bengaluru</span>
-                  <p class="milestone-desc">
-                    Registered for the Hacktivate event at Pravrutti 2.0 National Level Techfest, engaging in collaborative software ideation, rapid prototype development, and technical problem-solving.
-                  </p>
-                  <div class="milestone-meta-row">
-                    <span class="milestone-status-badge">Registered: Hacktivate Event</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Hackathon 3: Editable Placeholder -->
-              <div class="milestone-card">
-                <div class="milestone-badge">03</div>
-                <div class="milestone-body">
-                  <div class="milestone-header">
-                    <h4 class="milestone-title">[Third Hackathon Name — Editable Placeholder]</h4>
-                    <span class="milestone-date">[Event Date / Timeline]</span>
-                  </div>
-                  <!-- [EDITABLE]: Update with the third hackathon name and venue when available -->
-                  <span class="milestone-org">[Third Hackathon Institution / Venue, Bengaluru — Editable Placeholder]</span>
-                  <p class="milestone-desc">
-                    <!-- [EDITABLE]: Add challenge theme, problem statement, and technologies explored -->
-                    Collegiate hackathon participation focusing on collaborative software engineering, team strategy, and real-world challenge exploration.
-                  </p>
-                  <div class="milestone-meta-row">
-                    <span class="milestone-status-badge">[Participation Details TBA]</span>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Right Column: Sports & Personal Interests + Certificates Placeholder -->
-          <div class="achievements-ledger-col">
-            <div class="sub-column-header">
-              <span class="sub-col-tag">INTERESTS &amp; CERTIFICATIONS //</span>
-              <span class="sub-col-count">Activities &amp; Learning</span>
-            </div>
-
-            <div class="milestones-stack">
-
-              <!-- Sports & Personal Interests Card -->
-              <div class="milestone-card">
-                <div class="milestone-badge">✦</div>
-                <div class="milestone-body">
-                  <div class="milestone-header">
-                    <h4 class="milestone-title">Sports &amp; Personal Interests</h4>
-                    <span class="milestone-date">Active Lifestyle</span>
-                  </div>
-                  <span class="milestone-org">Athletic Discipline &amp; Technical Passions</span>
-                  <p class="milestone-desc">
-                    Sports is an important part of my life. The stamina, strategic discipline, and team collaboration developed through athletics directly translate into my software engineering and machine learning workflows.
-                  </p>
-
-                  <!-- Key Technical & Personal Interest Tags -->
-                  <div class="interests-tags-wrap">
-                    <span class="interest-tag highlight">⚽ / 🏏 Sports &amp; Athletics</span>
-                    <span class="interest-tag">🤖 Machine Learning</span>
-                    <span class="interest-tag">📊 Data Science</span>
-                    <span class="interest-tag">📈 Data Visualization</span>
-                    <span class="interest-tag">⚙️ Backend Development</span>
-                    <span class="interest-tag">🛠️ Building Practical Applications</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Certificates Section: Honest, Future-Ready Message (No Fake Certificates) -->
-              <div class="cert-placeholder-card">
-                <div class="cert-placeholder-icon">📜</div>
-                <h4 class="milestone-title" style="margin: 0;">Certifications &amp; Accreditations</h4>
-                <p class="cert-placeholder-text">
-                  "Technical learning and project achievements will be added here as I progress."
-                </p>
-                <span class="cert-placeholder-tag">Future Accreditations Ledger • Easy to Update</span>
-
-                <!-- ======================================================================
-                     [EDITABLE FUTURE CERTIFICATE TEMPLATE]
-                     To add real course certificates in the future, uncomment the template below:
-                     <div class="cert-card" style="text-align: left; width: 100%; margin-top: 12px;">
-                       <div class="cert-media-slot">
-                         <img src="certificate.jpg" alt="Course Name" class="cert-thumbnail" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                         <div class="cert-media-fallback">📜</div>
-                       </div>
-                       <div class="cert-details">
-                         <div class="cert-top-line">
-                           <h4 class="cert-name">[Course / Certificate Name]</h4>
-                           <span class="cert-year">[2026]</span>
-                         </div>
-                         <span class="cert-issuer">Issuer: [Platform / Institution]</span>
-                         <div class="cert-footer-line">
-                           <span class="cert-id">ID: [Credential ID]</span>
-                           <a href="[Verification URL]" target="_blank" rel="noopener noreferrer" class="cert-link">Verify ↗</a>
-                         </div>
-                       </div>
-                     </div>
-                ====================================================================== -->
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- ==========================================================================
-         [EDITABLE SECTION: DIRECT CONTACT & DISPATCH]
-    ========================================================================== -->
-    <section id="contact" class="section-block contact-section">
-      <div class="section-container">
-
-        <!-- Section Header -->
-        <header class="editorial-section-header">
-          <div class="section-tag-group">
-            <span class="section-index-num">06/</span>
-            <span class="section-tag-name">COMMUNICATION</span>
-          </div>
-          <h2 class="section-title">
-            Let's build something <span class="italic-serif">impactful</span> together.
-          </h2>
-          <p class="section-dek">
-            Whether you have a full-time engineering opening, an internship opportunity, or a collaborative project in mind — I'd love to connect.
-          </p>
-        </header>
-
-        <!-- Asymmetric Contact Grid -->
-        <div class="contact-editorial-grid">
-
-          <!-- Left Column: Coordinates & Instant Copy -->
-          <div class="contact-coordinates-col">
-            <div class="coordinates-card">
-              <span class="coordinates-stamp">DIRECT COORDINATES //</span>
-
-              <!-- Official Email Row with 1-Click Copy -->
-              <div class="coord-item">
-                <div class="coord-meta">
-                  <span class="coord-label">OFFICIAL EMAIL</span>
-                  <a href="mailto:maheshbasarakod05@gmail.com" class="coord-value"
-                    id="contact-email-official-val">maheshbasarakod05@gmail.com</a>
-                </div>
-                <button type="button" class="btn-copy-coord" id="btn-copy-email-official"
-                  title="Copy official email to clipboard" aria-label="Copy Official Email">
-                  <span>Copy</span>
-                  <span class="copy-tooltip" id="tooltip-email-official">Copied!</span>
-                </button>
-              </div>
-
-              <!-- Personal Email Row with 1-Click Copy -->
-              <div class="coord-item">
-                <div class="coord-meta">
-                  <span class="coord-label">PERSONAL EMAIL</span>
-                  <a href="mailto:maheshgouda05@gmail.com" class="coord-value"
-                    id="contact-email-personal-val">maheshgouda05@gmail.com</a>
-                </div>
-                <button type="button" class="btn-copy-coord" id="btn-copy-email-personal"
-                  title="Copy personal email to clipboard" aria-label="Copy Personal Email">
-                  <span>Copy</span>
-                  <span class="copy-tooltip" id="tooltip-email-personal">Copied!</span>
-                </button>
-              </div>
-
-              <!-- Phone Row with 1-Click Copy -->
-              <div class="coord-item">
-                <div class="coord-meta">
-                  <span class="coord-label">DIRECT PHONE</span>
-                  <a href="tel:9964073064" class="coord-value"
-                    id="contact-phone-val">+91 9964073064</a>
-                </div>
-                <button type="button" class="btn-copy-coord" id="btn-copy-phone"
-                  title="Copy phone number to clipboard" aria-label="Copy Phone">
-                  <span>Copy</span>
-                  <span class="copy-tooltip" id="tooltip-phone">Copied!</span>
-                </button>
-              </div>
-
-              <!-- Location Row -->
-              <div class="coord-item">
-                <div class="coord-meta">
-                  <span class="coord-label">LOCATION</span>
-                  <span class="coord-value">Whitefield, Bengaluru, Karnataka, India</span>
-                </div>
-                <span class="coord-badge">IST (UTC+5:30)</span>
-              </div>
-
-              <!-- Social Profiles -->
-              <div class="social-channels-group">
-                <span class="channels-label">PROFESSIONAL CHANNELS //</span>
-                <div class="channels-links-row">
-                  <a href="https://github.com/maheshgouda05" target="_blank" rel="noopener noreferrer"
-                    class="channel-pill" title="Mahesh Basarkhoda GitHub">
-                    <span>🐙 GitHub Profile</span>
-                    <span class="channel-arrow">↗</span>
-                  </a>
-                  <a href="https://www.linkedin.com/in/mahesh-gouda-3745a0323/" target="_blank" rel="noopener noreferrer"
-                    class="channel-pill" title="Mahesh Basarkhoda LinkedIn">
-                    <span>💼 LinkedIn Profile</span>
-                    <span class="channel-arrow">↗</span>
-                  </a>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Right Column: Interactive Message Dispatch Form -->
-          <div class="contact-form-col">
-            <div class="dispatch-form-card">
-              <span class="form-stamp">DIRECT MESSAGE DISPATCH //</span>
-
-              <form id="contact-dispatch-form" class="editorial-form" novalidate>
-
-                <!-- Inquiry Topic Selector -->
-                <div class="form-field-group">
-                  <label class="field-label">NATURE OF INQUIRY <span class="req">*</span></label>
-                  <div class="inquiry-pills-row" role="radiogroup" aria-label="Inquiry Category">
-                    <button type="button" class="inquiry-btn active" data-category="Internship Opportunity">Internship Opportunity</button>
-                    <button type="button" class="inquiry-btn" data-category="Project Collaboration">Project Collaboration</button>
-                    <button type="button" class="inquiry-btn" data-category="Full-Time Role">Full-Time Role</button>
-                    <button type="button" class="inquiry-btn" data-category="General Inquiry">General Inquiry</button>
-                  </div>
-                  <input type="hidden" name="inquiry_category" id="inquiry_category" value="Internship Opportunity">
-                </div>
-
-                <!-- Name & Email Inputs -->
-                <div class="form-row-dual">
-                  <div class="form-field-group">
-                    <label for="form-sender-name" class="field-label">YOUR NAME <span class="req">*</span></label>
-                    <input type="text" id="form-sender-name" name="name" class="editorial-input"
-                      placeholder="e.g. John Doe" required>
-                  </div>
-                  <div class="form-field-group">
-                    <label for="form-sender-email" class="field-label">EMAIL ADDRESS <span class="req">*</span></label>
-                    <input type="email" id="form-sender-email" name="email" class="editorial-input"
-                      placeholder="e.g. john@organization.com" required>
-                  </div>
-                </div>
-
-                <!-- Subject Line -->
-                <div class="form-field-group">
-                  <label for="form-subject" class="field-label">SUBJECT LINE</label>
-                  <input type="text" id="form-subject" name="subject" class="editorial-input"
-                    placeholder="e.g. Data Science Internship / Project Collaboration">
-                </div>
-
-                <!-- Message Textarea -->
-                <div class="form-field-group">
-                  <label for="form-message" class="field-label">YOUR MESSAGE <span class="req">*</span></label>
-                  <textarea id="form-message" name="message" rows="5" class="editorial-textarea"
-                    placeholder="Provide details about your project, opportunity, or questions..." required></textarea>
-                </div>
-
-                <!-- Feedback Alert Container -->
-                <div id="form-feedback-banner" class="form-feedback-banner" role="alert" style="display: none;"></div>
-
-                <!-- Submit Button -->
-                <button type="submit" class="btn-dispatch-submit" id="btn-dispatch-submit">
-                  <span>Prepare Message Dispatch</span>
-                  <span class="btn-arrow">→</span>
-                </button>
-
-              </form>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
+    </footer>
 
   </main>
 
-
-  <!-- ==========================================================================
-       [SITE FOOTER]
-  ========================================================================== -->
-  <footer class="site-footer">
-    <div class="footer-container">
-
-      <!-- Top Footer Row: Colophon -->
-      <div class="footer-top-row">
-        <div class="footer-colophon">
-          <span class="footer-brand-title">Mahesh Basarkhoda</span>
-          <p class="footer-colophon-text">
-            Data Science Student &amp; Backend Developer based in Whitefield, Bengaluru, Karnataka, India. Crafted with semantic HTML5, Vanilla CSS3, and Vanilla JavaScript.
-          </p>
-        </div>
-
-        <nav class="footer-sitemap" aria-label="Footer Navigation">
-          <span class="sitemap-heading">SITEMAP //</span>
-          <ul class="footer-sitemap-list">
-            <li><a href="#hero">00. Home</a></li>
-            <li><a href="#about">01. Biography</a></li>
-            <li><a href="#projects">02. Works</a></li>
-            <li><a href="#skills">03. Stack</a></li>
-            <li><a href="#education">04. Education</a></li>
-            <li><a href="#activities">05. Activities</a></li>
-            <li><a href="#contact">06. Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-
-      <!-- Bottom Footer Bar -->
-      <div class="footer-bottom-bar">
-        <p class="copyright-line">
-          &copy; <span id="current-year">2026</span> Mahesh Basarkhoda. All rights reserved.
-        </p>
-
-        <a href="#hero" class="btn-return-top" aria-label="Return to top of page">
-          <span>Return to Top</span>
-          <span>↑</span>
-        </a>
-      </div>
-
-    </div>
-  </footer>
-
-  <!-- Core JavaScript -->
+  <!-- Client-side Interactive Engine -->
   <script src="script.js"></script>
-
 </body>
 
 </html>
